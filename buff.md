@@ -1,4 +1,4 @@
-# Buff Tips
+# Buff Hack The Box Tips
 
 # ${{\color{purple}Initial Recon}}\ $
 
