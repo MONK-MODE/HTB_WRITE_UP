@@ -2,6 +2,16 @@
 
 # ${{\color{purple}Initial Recon}}\ $
 
+* Inspect source code
+* Launch gobuster at the same time 
+
+`gobuster dir -u http://10.10.10.7/ -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -o gobuster.out`
+* Download an image and look at the metadata check the date of upload with `exiftool`
+* Visit the site as a user :white_check_mark:
+* Add a proxy in the exploit to redirect flows to burp
+
+`searchsploit elastix`
+
 # ${{\color{purple}Initial Foothold}}\ $
 
 * First point when he have a security TLS error in firefox like this 
