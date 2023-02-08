@@ -55,7 +55,7 @@ LFI tips:
 * Use `curl -k (https://) -o xxx.png` use -k for allow insecure server connections
 * Use `exiftool` for .png
 * Use `ctrl + U` to improve a display
-* Use vi `:g/nologin/d` to clean up the outputw of the `/etc/passwd` file
+* Use vi `:g/nologin/d` to clean up the output of the `/etc/passwd` file
 * When i found a `password` and `user` don't hesitate to directly do a bruteforce
 
 `ssh hydra -L users -P pw ssh://IP`
