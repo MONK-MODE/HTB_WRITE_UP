@@ -16,7 +16,24 @@ LFI tips:
 - /proc/self/status%00 (look at the uid of the user and look at the user who runs the application in `/etc/passwd`)
 - check /proc/self/about%00 (check the possible user agent `<?php echo "hello"; ?>`)
 - use the burp suite intruder to see if there are any other accessible files
-  
+ 
+SIP tips: 
+- if I am in front of a SIP phone I can use `svmap`
+ `svmap 10.10.10.7`
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/217537969-6856e779-ba5b-4d18-a566-b5ba7f5af690.png)
+
+ In Elastix 2.2.0 there is a Remote Code Execution and to see how to use it you need to know the extension of the SIP equipment (FreePBX) to find this extension I will use: `svwar`
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/217540202-42ce2dd2-ba52-4b65-9b84-2da904660721.png)
+
+ After that you just have to change the extension value in the exploit :
+ 
+ https://www.exploit-db.com/exploits/18650
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/217540838-b34ce047-8189-477e-bfad-de9ecba90923.png)
+
+ 
 # ${{\color{purple}Privilege Escalation}}\ $
 
 ![image](https://user-images.githubusercontent.com/123066149/217532253-26283ba3-dd22-439b-bfbc-8ddf4a65e467.png)
