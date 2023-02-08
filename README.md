@@ -1,4 +1,5 @@
 # HTB_WRITE_UP
 
-1) Buff
-2) Lame
+1) Lame
+2) Buff
+3) Beep
