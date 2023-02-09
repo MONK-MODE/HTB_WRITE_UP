@@ -8,6 +8,8 @@
 ### and 
 ``nmap --script safe -445 10.10.10.100``
 
+* The right way here was the right enumeration of the port 445 **:white_check_mark:**
+
 ### DNS recon
 ``gobuster dns -d active.htb -t 25 -w /opt/seclists/Discovery/DNS/subdomains-top1million-20000.txt``
 
