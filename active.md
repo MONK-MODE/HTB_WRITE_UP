@@ -43,6 +43,13 @@
 
 ### I found a password in the Groups.xml file but what to do afterwards on a box where the port 3389 is not open ?
 
+Decode password :
+
+`python3 gpp-decrypt.py -c edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ`
+
+![image](https://user-images.githubusercontent.com/123066149/217777696-9092c454-7c24-4105-b10a-2a65fc5e4ef1.png)
+
+
 # ${{\color{purple}Exploitation}}\ $
 
  ### 1) Find the users of the box 
