@@ -16,7 +16,7 @@
 
 # ${{\color{purple}Initial Foothold}}\ $
 
-### Find default admin panel with Basic http authentication 
+### Find default admin panel with Basic http authentication **:white_check_mark:**
 
 http://10.10.10.95:8080/manager/status
 http://10.10.10.95:8080/manager/html
