@@ -28,7 +28,7 @@
 ### - ``gobuster dns -d irked.htb -t 25 -w /opt/seclists/Discovery/DNS/subdomains-top1million-20000.txt``
 ### - ``curl http://10.10.10.117/irked.jpg -o irked.jpg``
 ### - ``exiftool irked.jpg`` modification Date/Time : 2018
-### - IRC is almost working !
+### - IRC is almost working ! :white_check_mark:
 ### - ``vi /etc/hosts irked.htb``
 
 
