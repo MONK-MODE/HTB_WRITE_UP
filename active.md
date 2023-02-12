@@ -33,12 +33,19 @@
 ``smbclient -U 'guest%' -L //10.10.10.100``
 
 ### SMB to not miss anything in the share
+
 ``smbmap -R Replication -H 10.10.10.100``
+
 ``smbmap -R Replication -H 10.10.10.100 -A Groups.xml -q``
+
 ### or 
+
 ``smbclient //10.10.10.100/Replication``
+
 ``RECURSE ON``
+
 ``PROMPT OFF``
+
 ``mget *``
 
 # ${{\color{purple}Initial Foothold}}\ $
