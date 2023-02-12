@@ -6,7 +6,7 @@
 ### or
 ``nmap -p- -sV -oA fullactive 10.10.10.100``
 ### and 
-``nmap --script safe -445 10.10.10.100``
+``nmap --script safe -p 445 10.10.10.100``
 
 * The right way here was the right enumeration of the port 445 **:white_check_mark:**
 
