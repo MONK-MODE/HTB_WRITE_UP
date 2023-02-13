@@ -10,7 +10,13 @@
 
 445/tcp open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds                                                                            
 
-# ${{\color{purple}Initial Foothold}}\ $
+# ${{\color{purple}Initial Foothold}}\ $  
+
+### smb discovery of a backups repository **:white_check_mark:**
+
+``smbclient -U 'guest%' -L //10.10.10.134``
+
+``smbclient -U 'guest%' //10.10.10.134/Backups``
 
 ``mkdir /mnt/smb``
 
