@@ -73,7 +73,10 @@ It's possible to execute a different shellcode like a bind shell for example :
 
 ### smb-vuln-ms17-010
 
-git clone https://github.com/3ndG4me/AutoBlue-MS17-010
+
+https://github.com/3ndG4me/AutoBlue-MS17-010/blob/master/zzz_exploit.py
+
+``git clone https://github.com/3ndG4me/AutoBlue-MS17-010``
 
 ### The machine is also vulnerable to smb-vuln-ms17-010
 ### For the exploitation I used the scripts : Autoblu because they are the only ones to be python3+ compatible
