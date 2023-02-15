@@ -8,3 +8,4 @@
 6) Irked
 7) Bastion
 8) Legacy 
+9) Blue
