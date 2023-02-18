@@ -140,7 +140,7 @@ https://www.epochconverter.com/ldap # Allows to transform data and to know if th
 
 
 
-``ftp –v –n –s:ftp.txt``
+``ftp -v -n -s:ftp.txt``
 
 ``systemctl stop pure-ftpd``
 
