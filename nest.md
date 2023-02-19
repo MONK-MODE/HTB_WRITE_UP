@@ -109,7 +109,9 @@ https://dotnetfiddle.net/LdhDaa
 # ${{\color{purple}Points of Improvement}}\ $
 
 * Use crackmap for shares
-* Mounter the shares on my computer for a perfect enumeration 
+* Mount the shares on my computer for a perfect enumeration 
+* Don't forget that it is possible to mount a share with the password of a user :
+``mount -t cifs //10.10.10.178/Data /mnt/tmpuser -o "username=TempUser,password=welcome2019"``
 * Test the open ports with telent nc and netcat because they don't send the same data 
 * Think about the ``allinfo`` method of smb commands for interesting files 
 * Use the tree -f command for enumeration
