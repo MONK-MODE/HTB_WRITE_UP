@@ -67,23 +67,23 @@ https://dotnetfiddle.net/LdhDaa
 
 ### I have created directories and I mounted the share in the files to make a better enumeration :
 
-mkdir C.Smith
+``mkdir C.Smith``
 
-mkdir L.Frost
+``mkdir L.Frost``
 
-mkdir R.Thompson
+``mkdir R.Thompson``
 
-mkdir TempUser 
+``mkdir TempUser``
 
-mount -t cifs -o 'username=L.Frost,password=welcom2019' //10.10.10.178/Users /mnt/L.Frost
+``mount -t cifs -o 'username=L.Frost,password=welcom2019' //10.10.10.178/Users /mnt/L.Frost``
 
-mount -t cifs //10.10.10.178/Data /mnt/tmpuser -o "username=TempUser,password=welcome2019"
+``mount -t cifs //10.10.10.178/Data /mnt/tmpuser -o "username=TempUser,password=welcome2019"``
 
-find .  
+``find .``  
 
 ### OR to exploit the structure
 
-tree -f
+``tree -f``
 
 # ${{\color{purple}Privilege Escalation}}\ $
 
