@@ -107,3 +107,20 @@ https://dotnetfiddle.net/LdhDaa
 
 
 # ${{\color{purple}Points of Improvement}}\ $
+
+* Use crackmap for shares
+* Mounter the shares on my computer for a perfect enumeration 
+* Test the open ports with telent nc and netcat because they don't send the same data 
+* Think about the ``allinfo`` method of smb commands for interesting files 
+* Use the tree -f command for enumeration
+* It's possible to retrieve all files from a share with the following smb commands
+
+``allinfo "Debug Mode Password.txt`` 
+``echo -n yyEq0Uvvhq2uQOcWG8peLoeRQehqip/fKdeG/kjEVb4= |base64 -d`` ### Base64 decode
+``tree -f``
+
+``smb: \> mask ""``
+``smb: \> recurse``
+``smb: \> prompt``
+``smb: \> mget *``
+
