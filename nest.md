@@ -114,6 +114,10 @@ https://dotnetfiddle.net/LdhDaa
 
 ``mount -t cifs //10.10.10.178/Data /mnt/tmpuser -o "username=TempUser,password=welcome2019"``
 
+* Tell to crackmapexec do not stop if there is a success (valide user and password)
+
+``crackmapexec smb 10.10.10.178 -u users.lst -p welcome2019 --continue-on-success``
+
 * Test the open ports with telent nc and netcat because they don't send the same data 
 * Think about the ``allinfo`` method of smb commands for interesting files 
 * Use the tree -f command for enumeration
