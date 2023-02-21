@@ -180,7 +180,7 @@ https://soroush.secproject.com/blog/2019/08/uploading-web-config-for-fun-and-pro
 
 * Better perform the directory bruteforce
 * Redirect bruteforces into files, same as nmap
-* Use a wordlist to brute force the extensions of a file upload ( don't waste your time doing it by hand )
+* Use wordlist to brute force extensions of a file upload ( don't waste your time doing it by hand )
 * Don't get stuck in a shell that doesn't allow you to run binaries
 * Don't hesitate to try several POC to find the right RCE
 
