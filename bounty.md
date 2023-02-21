@@ -27,6 +27,16 @@ gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-l
 ![image](https://user-images.githubusercontent.com/123066149/220403441-8a066e40-36cd-4899-93ed-620cf87938ad.png)
 ![image](https://user-images.githubusercontent.com/123066149/220403611-c9f3b6cd-c12f-4c23-b15e-bc6e34d9c8b8.png)
 
+### Load extension.txt i used hacktrycks to find the right extensions according to the type of server :
+
+https://book.hacktricks.xyz/pentesting-web/file-upload
+
+![image](https://user-images.githubusercontent.com/123066149/220445347-d01adb51-b57f-45f5-b5b2-5ba5dbe30298.png)
+
+### For this attack is important to find the extension that the server will accept. 
+### It's with the length of the answer that I find the right extension.
+
+![2](https://user-images.githubusercontent.com/123066149/220445721-12856fa5-e575-4748-a557-29699d739e19.PNG)
 
 
 # ${{\color{purple}Exploitation}}\ $ **:white_check_mark:**
