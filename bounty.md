@@ -10,7 +10,7 @@ gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-l
 
 # ${{\color{purple}Initial Foothold}}\ $
 
-### My goubster command allowed me to find the file /transfer.apsx which allows to upload on the server 
+### My goubster command allowed me to find the file /transfer.apsx which allows to upload on the server **:white_check_mark:**
 
 gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30 -x aspx,asp
 
@@ -31,6 +31,8 @@ gobuster dir -u http://10.10.10.93 -w /usr/share/wordlists/dirbuster/directory-l
 
 https://book.hacktricks.xyz/pentesting-web/file-upload
 
+ASP: .asp, .aspx, .config, .ashx, .asmx, .aspq, .axd, .cshtm, .cshtml, .rem, .soap, .vbhtm, .vbhtml, .asa, .cer, .shtml
+
 ![image](https://user-images.githubusercontent.com/123066149/220445347-d01adb51-b57f-45f5-b5b2-5ba5dbe30298.png)
 
 ### For this attack is important to find the extension that the server will accept. 
@@ -38,8 +40,26 @@ https://book.hacktricks.xyz/pentesting-web/file-upload
 
 ![2](https://user-images.githubusercontent.com/123066149/220445721-12856fa5-e575-4748-a557-29699d739e19.PNG)
 
+### After a little google search there are poc to get to a code execution :
 
-# ${{\color{purple}Exploitation}}\ $ **:white_check_mark:**
+![image](https://user-images.githubusercontent.com/123066149/220451259-7825fcf6-ea3f-4cfa-b8d8-73b249363af7.png)
+
+### I used this code to try a RCE
+
+https://soroush.secproject.com/blog/2019/08/uploading-web-config-for-fun-and-profit-2/
+
+![image](https://user-images.githubusercontent.com/123066149/220451505-f2b8f383-ce2f-4ce5-be05-78bc5fd4bdc9.png)
+
+![image](https://user-images.githubusercontent.com/123066149/220451628-36d207ce-e846-4ae6-8ec3-81c363893f38.png)
+
+### I send the requests via burp 
+
+![3](https://user-images.githubusercontent.com/123066149/220452408-7c694ce9-90d2-4ed8-a37e-c3764b386dc9.PNG)
+
+![4](https://user-images.githubusercontent.com/123066149/220452416-ef897977-6cd4-4e3a-b9c0-8a9224029ef0.PNG)
+
+
+# ${{\color{purple}Exploitation}}\ $ 
 
 # ${{\color{purple}Privilege Escalation}}\ $
 
