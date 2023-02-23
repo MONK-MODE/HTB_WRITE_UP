@@ -58,9 +58,11 @@
 
 ``git clone https://github.com/haseebT/mRemoteNG-Decrypt``
 
-### Retrieve the config file :
+### To find hidden files
 
-``dir \a``  ### To find hidden files
+``dir \a``  
+
+### Retrieve the config file :
 
 ``C:\Users\L4mpje\AppData\Roaming\mRemoteNG\confCons.xml``
 
