@@ -35,6 +35,8 @@ And now, we can see and Adobe coldfusion version 8 :
 
 ![image](https://user-images.githubusercontent.com/123066149/220938321-30ea552b-5772-4418-850c-42c99d6cd362.png)
 
+# ${{\color{purple}Exploitation}}\ $
+
 ### I did not go further on this track because there is an unauthanticated rce :
 
 ![image](https://user-images.githubusercontent.com/123066149/220939537-b8df9049-69c7-471a-9366-ca3e58c38b88.png)
@@ -43,8 +45,21 @@ https://www.exploit-db.com/exploits/50057
 
 ``searchsploit -x cfm/webapps/50057.py``
 
-# ${{\color{purple}Exploitation}}\ $
+![image](https://user-images.githubusercontent.com/123066149/220940043-4ce2e9e8-b0cf-4a97-aded-a453f317cc17.png)
+
+```python 50057.py`
+
+### After a small change in the exploit it works very well :
+
+![image](https://user-images.githubusercontent.com/123066149/220940636-5282db37-173a-4033-a2ee-bf3669fd159a.png)
+
+
+![image](https://user-images.githubusercontent.com/123066149/220940523-d890d54c-7026-4500-9090-03f317893185.png)
+
 
 # ${{\color{purple}Privilege Escalation}}\ $
+
+### Here I used two methods because I had practiced a lot on the first one :
+
 
 # ${{\color{purple}Points of Improvement}}\ $
