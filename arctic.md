@@ -2,7 +2,7 @@
 
 # ${{\color{purple}Initial Recon}}\ $
 
-### For this box I added the T5 option to my scan because I knew that a common scan would not be enough.
+### For this box I added the ``T5`` option to my scan because I knew that a common scan would not be enough.
 ### I also wanted to see the difference between T4 and T5 but it was minimal for me 
 
 ``nmap -sC -sV -oA arctic 10.10.10.11 -T5``
@@ -96,7 +96,11 @@ https://github.com/SecWiki/windows-kernel-exploits
 ### And these resources for kernel vulnerabilities on windows :
 
 https://infosecwriteups.com/privilege-escalation-in-windows-380bee3a2842
+
+
 https://github.com/gladiatx0r/Powerless
+
+
 https://github.com/rasta-mouse/Watson
 
 #### And thanks to these resources I have exploited a vuln kernel very quickly (MS10-059) :
