@@ -15,7 +15,7 @@
 # ${{\color{purple}Initial Foothold}}\ $
 
 ### After a google search I realize that the FMTP protocol is an equivalent of a web server to store files :
-### On this box it's on the 8500 port
+### On this box it's on port 8500 :
 
 ![image](https://user-images.githubusercontent.com/123066149/220934868-d67af8f1-7bfd-42c2-94bd-8aed78e3953d.png)
 
