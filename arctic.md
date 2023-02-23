@@ -89,7 +89,7 @@ https://www.exploit-db.com/exploits/50057
 
 https://kakyouim.hatenablog.com/entry/2020/05/27/010807
 
-### : This repo for the compiled exploit :
+### This repo for the compiled exploit :
 
 https://github.com/SecWiki/windows-kernel-exploits
 
@@ -109,3 +109,9 @@ https://github.com/rasta-mouse/Watson
 
 
 # ${{\color{purple}Points of Improvement}}\ $
+
+* Telnet can get stuck on an open port 
+* Do not hesitate to check with ``curl`` a protocol 
+
+
+
