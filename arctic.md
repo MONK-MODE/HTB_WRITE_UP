@@ -97,11 +97,11 @@ https://github.com/SecWiki/windows-kernel-exploits
 
 https://infosecwriteups.com/privilege-escalation-in-windows-380bee3a2842
 
-
 https://github.com/gladiatx0r/Powerless
 
-
 https://github.com/rasta-mouse/Watson
+
+https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc
 
 #### And thanks to these resources I have exploited a vuln kernel very quickly (MS10-059) :
 
