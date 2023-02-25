@@ -100,3 +100,9 @@
 
 # ${{\color{purple}Points of Improvement}}\ $
 
+* When I'm on an application i need to try harder to find the code execution or creds.
+* don't get trapped by an error message check the source code.
+* When I have compromised a user make the enumeration of (Desktop + Document).
+* Create a specific directory for the commands that will allow you to make files transfers
+* Find the command to list hash formats on hashcat
+* Use several pth tools ( psexec pthwinexec )
