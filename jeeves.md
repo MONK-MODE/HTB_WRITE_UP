@@ -48,7 +48,7 @@
 
 ### SMBserver on kali machine :
 
-````/usr/bin/impacket-smbserver kali .``
+``/usr/bin/impacket-smbserver kali .``
 
 ![image](https://user-images.githubusercontent.com/123066149/221350050-1069ded2-46ff-4bf3-8532-6e21b7196467.png)
 
