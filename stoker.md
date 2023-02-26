@@ -2,15 +2,15 @@
 
 # ${{\color{purple}Initial Recon}}\ $
 
-nmap -sC -sV -oA stocker 10.10.11.196 -T4
+``nmap -sC -sV -oA stocker 10.10.11.196 -T4``
 
-22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+``22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)``
 
-80/tcp open  http    nginx 1.18.0 (Ubuntu)
+``80/tcp open  http    nginx 1.18.0 (Ubuntu)``
 
 # ${{\color{purple}Initial Foothold}}\ $
 
-ffuf -w /opt/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u http://FUZZ.stocker.htb/
+``ffuf -w /opt/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u http://FUZZ.stocker.htb/``
 
 ![image](https://user-images.githubusercontent.com/123066149/221412809-e0e3d7d7-885d-42c7-ba78-1797f9af88d3.png)
 
@@ -56,7 +56,7 @@ wget http://dev.stocker.htb/api/po/63fb613c77f6ecd01ecb786b
 
 ![image](https://user-images.githubusercontent.com/123066149/221414189-33a5c81b-e391-4f09-9a2c-de042b4a2cc3.png)
 
-exiftool 63fb613c77f6ecd01ecb786b
+``exiftool 63fb613c77f6ecd01ecb786b``
 
 ![7](https://user-images.githubusercontent.com/123066149/221414242-b46cf8d9-c9b0-4a57-a5db-c6f76a26b2fe.PNG)
 
@@ -66,8 +66,9 @@ searchsploit skia
 
 ### To go faster I used an h1 tag :
 
-<h1>TEST</h1>
-<img src=test.test/>
+``<h1>TEST</h1>``
+
+``<img src=test.test/>``
 
 ![image](https://user-images.githubusercontent.com/123066149/221414460-0deb45e9-2fbb-436e-a74e-2bf71ea8dee4.png)
 
@@ -97,7 +98,7 @@ searchsploit skia
 
 # ${{\color{purple}Privilege Escalation}}\ $
 
-sudo -l 
+``sudo -l``
 
 ![image](https://user-images.githubusercontent.com/123066149/221415501-a39a3dad-271b-4a7d-bfe6-5088cab41a86.png)
 
@@ -107,7 +108,7 @@ https://stackabuse.com/executing-shell-commands-with-node-js/
 
 ![image](https://user-images.githubusercontent.com/123066149/221415635-dbc57e9d-3084-4f35-aefe-4a1cb599249e.png)
 
-sudo /usr/bin/node /usr/local/scripts/../../../../../../tmp/test.js
+``sudo /usr/bin/node /usr/local/scripts/../../../../../../tmp/test.js``
 
 ![image](https://user-images.githubusercontent.com/123066149/221415711-d66e7689-eb00-4bda-b51e-448db19c8055.png)
 
