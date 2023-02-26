@@ -52,7 +52,7 @@ https://book.hacktricks.xyz/pentesting-web/login-bypass
 
 ![image](https://user-images.githubusercontent.com/123066149/221414028-5d7321d3-eb21-431b-8b78-fe0bc13bf31b.png)
 
-wget http://dev.stocker.htb/api/po/63fb613c77f6ecd01ecb786b
+``wget http://dev.stocker.htb/api/po/63fb613c77f6ecd01ecb786b``
 
 ![image](https://user-images.githubusercontent.com/123066149/221414189-33a5c81b-e391-4f09-9a2c-de042b4a2cc3.png)
 
@@ -60,7 +60,7 @@ wget http://dev.stocker.htb/api/po/63fb613c77f6ecd01ecb786b
 
 ![7](https://user-images.githubusercontent.com/123066149/221414242-b46cf8d9-c9b0-4a57-a5db-c6f76a26b2fe.PNG)
 
-searchsploit skia
+``searchsploit skia``
 
 ![8](https://user-images.githubusercontent.com/123066149/221414306-88ba81bf-2e57-411e-9518-c1c328a8019f.PNG)
 
