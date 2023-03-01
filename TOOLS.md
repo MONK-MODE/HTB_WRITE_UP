@@ -1,6 +1,6 @@
 # TOOLS USED
 
-1) Lame :
+1) Lame Windows:
 
 ``nmap/gobuster/dnsrecon/nslookup/smbmap/enum4linux/smbclient/gpp-decrypt/impacket-GetADUsers/impacket-GetUserSPNs/impacket-psexec/john/runas/dir``
 
