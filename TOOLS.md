@@ -14,8 +14,9 @@ Beep :
 Active :
 
 
-Jerry :
+Jerry Windows:
 
+``nmap/dirb/seclists/hydra/HYDRA_PROXY_HTTP/msfvenom``
 
 Irked :
 
@@ -24,8 +25,9 @@ Bastion Windows :
 
 ``nmap/smbclient/mnt/guestmount/impacket-secretsdump/mRemoteNG-Decrypt/ dir \a/impacket-psexec``
 
-Legacy :
+Legacy Windows:
 
+``nmap/nmap vuln/wget/msfvenom/ms08-067/zzz_exploit``
 
 Blue Windows :
 
@@ -41,9 +43,13 @@ Devel Windows:
 
 Optimum
 
-Granny
+Granny Windows :
 
-Nest
+``nmap/nmap vuln/gobuster/davtest/curl/msfvenom/churrasco``
+
+Nest Windows : 
+
+``nmap/telnet/smbclient/smbmap/tree/tree -f/crackmapexec/mount/find/impacket-psexec/smbclient allinfo``
 
 Bounty Windows :
 
@@ -53,9 +59,13 @@ Arctic Windows :
 
 ``nmap/hashid/searchsploit/Juicy_Potato_x86.exe/windows-exploit-suggester``
 
-Grandpa
+Grandpa Windows : 
 
-Jeeves
+``nmap/curl/windows-exploit-suggester/copy/Churraskito``
+
+Jeeves Windows :
+
+``nmap/gobuster/jenkins/powershell.exe IEX/impacket-smbserver/keepass2john/hashcat//usr/bin/impacket-psexec``
 
 Stocker
 
