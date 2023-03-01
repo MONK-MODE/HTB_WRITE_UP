@@ -1,6 +1,6 @@
 # TOOLS USED
 
-## Windows 
+# ${{\color{purple}Windows}}\ $
 
 ### Buff Windows :
 
@@ -62,7 +62,7 @@
 
 ``nmap/gobuster/jenkins/powershell.exe IEX/impacket-smbserver/keepass2john/hashcat//usr/bin/impacket-psexec``
 
-## Linux
+# ${{\color{purple}Linux}}\ $
 
 ### Beep Linux:
 
@@ -74,8 +74,12 @@
 
 ### Lame :
 
-## Active
+# ${{\color{purple}Active}}\ $
 
 ### Stocker
 
+``nmap/ffuf/burp/intruder/wget/exiftool/searchsploit/xss/rce/ssh/sudo``
+
 ### Soccer
+
+``nmap/ffuf/gobuster/google/sqlmap``
