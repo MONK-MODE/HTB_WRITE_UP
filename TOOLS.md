@@ -1,7 +1,8 @@
-# HTB_WRITE_UP
+# TOOLS USED
 
 1) Lame :
-nmap/gobuster/dnsrecon/nslookup/smbmap/enum4linux/smbclient/gpp-decrypt/impacket-GetADUsers/impacket-GetUserSPNs/impacket-psexec/john/runas/dir/
+
+``nmap/gobuster/dnsrecon/nslookup/smbmap/enum4linux/smbclient/gpp-decrypt/impacket-GetADUsers/impacket-GetUserSPNs/impacket-psexec/john/runas/dir``
 
 3) Buff
 4) Beep
