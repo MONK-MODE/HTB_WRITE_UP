@@ -1,10 +1,10 @@
 # TOOLS USED
 
-Lame Windows:
+Lame Windows :
 
 ``nmap/gobuster/dnsrecon/nslookup/smbmap/enum4linux/smbclient/gpp-decrypt/impacket-GetADUsers/impacket-GetUserSPNs/impacket-psexec/john/runas/dir``
 
-Buff Windows:
+Buff Windows :
 
 ``nmap/gobuster/exiftool/searchsploit/curl/powershell/chisel/msfvenom``
 
@@ -20,16 +20,16 @@ Jerry :
 Irked :
 
 
-Bastion Windows:
+Bastion Windows :
 
 ``nmap/smbclient/mnt/guestmount/impacket-secretsdump/mRemoteNG-Decrypt/ dir \a/impacket-psexec``
 
-Legacy:
+Legacy :
 
 
 Blue Windows :
 
-nmap/nmap vuln/MS17-010_CVE-2017-0143/
+``nmap/nmap vuln/MS17-010_CVE-2017-0143/``
 
 Forest Windows:
 
