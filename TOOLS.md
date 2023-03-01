@@ -1,72 +1,81 @@
 # TOOLS USED
 
-Lame Windows :
+## Windows 
 
-``nmap/gobuster/dnsrecon/nslookup/smbmap/enum4linux/smbclient/gpp-decrypt/impacket-GetADUsers/impacket-GetUserSPNs/impacket-psexec/john/runas/dir``
-
-Buff Windows :
+### Buff Windows :
 
 ``nmap/gobuster/exiftool/searchsploit/curl/powershell/chisel/msfvenom``
 
-Beep :
+### Active Windows :
 
+``nmap/gobuster/dnsrecon/nslookup/smbmap/enum4linux/smbclient/gpp-decrypt/impacket-GetADUsers/impacket-GetUserSPNs/impacket-psexec/john/runas/dir``
 
-Active :
-
-
-Jerry Windows:
+### Jerry Windows:
 
 ``nmap/dirb/seclists/hydra/HYDRA_PROXY_HTTP/msfvenom``
 
-Irked :
-
-
-Bastion Windows :
+### Bastion Windows :
 
 ``nmap/smbclient/mnt/guestmount/impacket-secretsdump/mRemoteNG-Decrypt/ dir \a/impacket-psexec``
 
-Legacy Windows:
+### Legacy Windows:
 
 ``nmap/nmap vuln/wget/msfvenom/ms08-067/zzz_exploit``
 
-Blue Windows :
+### Blue Windows :
 
 ``nmap/nmap vuln/MS17-010_CVE-2017-0143/``
 
-Forest Windows:
+### Forest Windows:
 
 ``nmap/sleep/smbclient/ldapsearch/rpcclient/crackmapexec/impacket-GetNPUsers/hashcat/evil-winrm/find/neo4j/BloodHound/SharpHound``
 
-Devel Windows:
+### Devel Windows:
 
 ``nmap/ftp/powershell IEX/JuicyPotato``
 
-Optimum
+### Optimum Windows : 
 
-Granny Windows :
+``nmap/searchsploit/tcpdump/grep``
+
+### Granny Windows :
 
 ``nmap/nmap vuln/gobuster/davtest/curl/msfvenom/churrasco``
 
-Nest Windows : 
+### Nest Windows : 
 
 ``nmap/telnet/smbclient/smbmap/tree/tree -f/crackmapexec/mount/find/impacket-psexec/smbclient allinfo``
 
-Bounty Windows :
+### Bounty Windows :
 
 ``nmap/dirb/gobuster/burp/tcpdump/asp/aspx/ftp/wget/impacket-smbserver/msfvenom/copy``
 
-Arctic Windows :
+### Arctic Windows :
 
 ``nmap/hashid/searchsploit/Juicy_Potato_x86.exe/windows-exploit-suggester``
 
-Grandpa Windows : 
+### Grandpa Windows : 
 
 ``nmap/curl/windows-exploit-suggester/copy/Churraskito``
 
-Jeeves Windows :
+### Jeeves Windows :
 
 ``nmap/gobuster/jenkins/powershell.exe IEX/impacket-smbserver/keepass2john/hashcat//usr/bin/impacket-psexec``
 
-Stocker
+## Linux
 
-Soccer
+### Beep Linux:
+
+``gobuster/searchsploit/sip/svwar/svmap/18650/telnet/nc/smtp/curl/exiftool/hydra``
+
+### Irked Linux:
+
+``nmap/gobuster/curl/exiftool/nc/vi/tcpdump/searchsploit/python/LinEnum/steghide/ssh/base64 -w0/ltrace``
+
+### Lame :
+
+## Active
+
+### Stocker
+
+### Soccer
