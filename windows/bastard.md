@@ -69,6 +69,10 @@ https://github.com/dreadlocked/Drupalgeddon2
 
 ![image](https://user-images.githubusercontent.com/123066149/222653326-a6bb088c-8984-4daa-8634-75fd0e114c60.png)
 
+### Other way :
+
+https://github.com/SecWiki/windows-kernel-exploits/tree/master/MS15-051
+
 # ${{\color{purple}Points of Improvement}}\ $
 
 * if I have a problem with the execution of an exploit in rubby
