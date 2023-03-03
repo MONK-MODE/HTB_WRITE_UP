@@ -76,3 +76,9 @@ https://github.com/dreadlocked/Drupalgeddon2
 ``gem install xx``
 
 ![image](https://user-images.githubusercontent.com/123066149/222652135-0d69f8e1-66bf-43a9-99b2-d1284cce2573.png)
+
+* Other way :
+
+![image](https://user-images.githubusercontent.com/123066149/222665701-0b747998-8481-4c25-a2ef-4e6a4a246310.png)
+
+
