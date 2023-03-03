@@ -16,7 +16,7 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/222651004-4f57a881-a658-42b1-9971-eed3a3e336a9.png)
 
-### And then I found the version :
+### And just after I found the version :
 
 ![image](https://user-images.githubusercontent.com/123066149/222651316-1a0c5c4c-72df-4617-a4a4-4b99ff7a49d5.png)
 
@@ -70,3 +70,7 @@ https://github.com/dreadlocked/Drupalgeddon2
 ![image](https://user-images.githubusercontent.com/123066149/222653326-a6bb088c-8984-4daa-8634-75fd0e114c60.png)
 
 # ${{\color{purple}Points of Improvement}}\ $
+
+* if I have a problem with the execution of an exploit in rubby
+
+![image](https://user-images.githubusercontent.com/123066149/222652135-0d69f8e1-66bf-43a9-99b2-d1284cce2573.png)
