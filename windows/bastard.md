@@ -73,4 +73,6 @@ https://github.com/dreadlocked/Drupalgeddon2
 
 * if I have a problem with the execution of an exploit in rubby
 
+``gem install xx``
+
 ![image](https://user-images.githubusercontent.com/123066149/222652135-0d69f8e1-66bf-43a9-99b2-d1284cce2573.png)
