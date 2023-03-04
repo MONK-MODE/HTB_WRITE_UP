@@ -85,10 +85,11 @@ spx,txt``
 
 ``http://10.10.10.97/change_pass.php?password=testtest&confirm_password=testtest&submit=submit``    
 
-
- 
 ![4](https://user-images.githubusercontent.com/123066149/222884881-42e06240-3c2a-4363-a374-c092f925050b.PNG)
-                                        
+ 
+### The URL is pasted into the message body of the Contact request, and after a short while the
+### credentials tyler:testtest can be used to log into the website.
+ 
 ![image](https://user-images.githubusercontent.com/123066149/222884939-5aca6d35-a3a1-44d2-be32-765eb2e3c451.png)                                       
                                         
 # ${{\color{purple}Exploitation}}\ $
