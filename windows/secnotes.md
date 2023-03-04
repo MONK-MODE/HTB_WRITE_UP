@@ -132,7 +132,13 @@ spx,txt``
 ![image](https://user-images.githubusercontent.com/123066149/222891298-07eeb349-09d1-495e-b025-1408516d3f6b.png)                   
 
 # ${{\color{purple}Points of Improvement}}\ $
+* There are several techniques to protect yourself from the XSS flaw:
+-   The htmlspecialchars() function converts special characters into HTML entities.
+-   htmlentities() which is identical to htmlspecialchars() except that it filters all characters equivalent to html or javascript coding.
+-   strip_tags(), this function removes all tags.
 
+* There was no CSRF token in the request
+* it's possible to change the request method in burp
 * There was another way to gain access to the share :
 
 ![image](https://user-images.githubusercontent.com/123066149/222894535-75d500df-752d-4782-b081-e575bdf5f6fa.png)
