@@ -17,8 +17,7 @@
 ![image](https://user-images.githubusercontent.com/123066149/225002081-e468220b-fddf-493b-a817-7d64b90accc1.png)
 
 
-# ${{\color{purple}Exploitation}}\ $
+# ${{\color{purple}Script}}\ $
 
-# ${{\color{purple}Privilege Escalation}}\ $
+# ${{\color{purple}}}\ $
 
-# ${{\color{purple}Points of Improvement}}\ $
