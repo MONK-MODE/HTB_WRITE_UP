@@ -10,6 +10,10 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/226275482-d6658d91-913a-40a9-a3d5-e6f93adc279d.png)
 
+``sslyze --heartbleed 10.10.10.79``
+
+![image](https://user-images.githubusercontent.com/123066149/226279997-6049896b-91cb-4607-a47d-1ffe4535246e.png)
+
 # ${{\color{purple}Initial Foothold}}\ $
 
 ``gobuster dir -u http://10.10.10.79/ -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -t 30``
@@ -64,5 +68,27 @@ https://gist.github.com/eelsivart/10174134#file-heartbleed-py
 
 ![image](https://user-images.githubusercontent.com/123066149/226277753-c73f7e1c-47b8-4385-a90c-3e6efd09b428.png)
 
-
 # ${{\color{purple}Points of Improvement}}\ $
+
+* Verify with sslyze to check if the server is vulnerable 
+* It's possible to avoid ssh errors by editing the ``~/.ssh/config`` file
+* Don't hesitate to replay the exploit to find the right information in memory
+* Always run an ``nmap vuln script``
+* Another way if there was no vuln heartbleed :
+
+![image](https://user-images.githubusercontent.com/123066149/226278942-de8cf395-1dc1-411b-a403-6d6256e2d706.png)
+
+``ssh2john hype.key > hype_key.hash``
+
+![image](https://user-images.githubusercontent.com/123066149/226279015-5b346708-eb1e-4581-af77-29d4ccac8c97.png)
+
+![image](https://user-images.githubusercontent.com/123066149/226279076-6cf2dffb-63de-49c6-b37b-265fd78f7497.png)
+
+``john --wordlist=/home/kali/Downloads/rockyou.txt hype_key.hash``
+
+![image](https://user-images.githubusercontent.com/123066149/226279210-1f4135c4-832f-4223-9ef4-c227ace94b59.png)
+
+``john --show hype_key.hash``
+
+![image](https://user-images.githubusercontent.com/123066149/226279299-68529ded-91c1-4c32-851c-65bfcc6510cf.png)
+
