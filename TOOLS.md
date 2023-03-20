@@ -76,6 +76,10 @@
 
 ``nmap/nmapvuln/sslyze/gobuster/cyberchef/heartbleed/echo -n/tmux/ssh2john/john``
 
+### Irked Shocker:
+
+``nmap/nmap vuln/nikto/dirb/gobuster/curl/burp/tcpdump/perl_rev_shell``
+
 ### Lame :
 
 # ${{\color{purple}Active}}\ $
