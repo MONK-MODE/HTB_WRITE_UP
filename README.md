@@ -23,3 +23,4 @@
 21) Bastard
 22) Secnotes
 23) Valentine
+24) Shocker
