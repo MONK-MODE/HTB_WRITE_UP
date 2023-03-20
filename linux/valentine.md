@@ -22,13 +22,15 @@
 
 # ${{\color{purple}Exploitation}}\ $
 
+### Gobuster finds a hype_key file as well as encode and decode directories.
+
 ![image](https://user-images.githubusercontent.com/123066149/226276015-3f1bd717-17c1-4b48-9002-afe56c27a67e.png)
 
 ![image](https://user-images.githubusercontent.com/123066149/226276237-43b610ce-a170-4f7e-937a-90e61116aa3a.png)
 
 ![image](https://user-images.githubusercontent.com/123066149/226276374-46434383-bf4a-4d81-887e-c98f8e5a7a6c.png)
 
-### I used this exploit :
+### I used this exploit to exploit heartbleed vulnerability :
 
 https://gist.github.com/eelsivart/10174134#file-heartbleed-py
 
@@ -36,6 +38,8 @@ https://gist.github.com/eelsivart/10174134#file-heartbleed-py
 
 ![image](https://user-images.githubusercontent.com/123066149/226276713-88458e71-4a8f-4033-bede-d88004275522.png)
 
+### Decoding the base64 reveals the passphrase for hype_key which can be used to connect via
+SSH as the hype user.
 
 ``echo -n aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg== | base64 -d``
 
@@ -51,9 +55,13 @@ https://gist.github.com/eelsivart/10174134#file-heartbleed-py
 
 # ${{\color{purple}Privilege Escalation}}\ $
 
+### The content of the bash history file allows me to see that the user uses tmux :
+
 ``cat .bash_history``
 
 ![image](https://user-images.githubusercontent.com/123066149/226277399-e78d8cd9-bd24-480a-b3b9-2a4d0552002f.png)
+
+### Running ps aux reveals a tmux session being run as the root user.
 
 ``ps aux | grep -i tmux``
 
@@ -62,6 +70,9 @@ https://gist.github.com/eelsivart/10174134#file-heartbleed-py
 ``ls -la /.devs/dev_sess``
 
 ![image](https://user-images.githubusercontent.com/123066149/226277620-9b7a96b0-d6f9-4bbe-82d0-9bd2c6a8bbc8.png)
+
+### Simply running the command tmux -S /.devs/dev_sess will connect to the session, with full root
+privileges :
 
 ``export TERM=xterm``
 ``tmux -S /.devs/dev_sess``
