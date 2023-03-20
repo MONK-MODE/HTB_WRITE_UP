@@ -72,6 +72,10 @@
 
 ``nmap/gobuster/curl/exiftool/nc/vi/tcpdump/searchsploit/python/LinEnum/steghide/ssh/base64 -w0/ltrace``
 
+### Irked Valentine:
+
+``nmap/nmapvuln/sslyze/gobuster/cyberchef/heartbleed/echo -n/tmux/ssh2john/john``
+
 ### Lame :
 
 # ${{\color{purple}Active}}\ $
