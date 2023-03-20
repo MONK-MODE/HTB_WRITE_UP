@@ -7,6 +7,7 @@
 `python3 -c 'import pty; pty.spawn("/bin/bash")'`
 
 # ${{\color{purple}Manual testing}}\ $
+# ${{\color{green}sudo -l}}\ $
 
 `sudo -l`
 
@@ -15,6 +16,13 @@
 `sudo -u scriptmanager /bin/bash`
 
 ![image](https://user-images.githubusercontent.com/123066149/225002081-e468220b-fddf-493b-a817-7d64b90accc1.png)
+
+# ${{\color{green}tmux}}\ $
+
+`cat .bash_history`
+
+
+
 
 
 # ${{\color{purple}Script}}\ $
