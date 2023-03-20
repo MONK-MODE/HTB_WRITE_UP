@@ -67,3 +67,6 @@ https://www.sevenlayers.com/index.php/125-exploiting-shellshock
 
 ![image](https://user-images.githubusercontent.com/123066149/226364474-3b850292-695e-42c4-a7db-0081e34dc9bf.png)
 
+# ${{\color{purple}Point of Improvement}}\ $
+
+* Don't hesitate to use several extensions during the recon phase
