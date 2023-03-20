@@ -69,4 +69,4 @@ https://www.sevenlayers.com/index.php/125-exploiting-shellshock
 
 # ${{\color{purple}Point of Improvement}}\ $
 
-* Don't hesitate to use several extensions during the recon phase
+* Don't hesitate to use several extensions during the recon phase ``-x sh,pl``
