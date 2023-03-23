@@ -30,9 +30,25 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/227245234-617c10f8-0b17-43cb-8564-7683ce889222.png)
 
-
 # ${{\color{purple}Exploitation}}\ $
 
+### it was necessary to make a bruteforce to pass the login page :
+i used this script :
+
+![image](https://user-images.githubusercontent.com/123066149/227262336-a8f4a21b-0268-4613-bef5-acbeed88a1e8.png)
+
+### I used the arbitrary file upload vulnerabilty to spauwn a shell :
+
+https://github.com/dix0nym/CVE-2015-6967
+
+![image](https://user-images.githubusercontent.com/123066149/227262706-11a1e4ce-c2ed-49a5-9516-20689f052ebd.png)
+
 # ${{\color{purple}Privilege Escalation}}\ $
+
+![image](https://user-images.githubusercontent.com/123066149/227263489-c385be2f-b4d6-46b2-a8aa-f0c0f3500dc1.png)
+
+### After a litle modification in the script :
+
+![image](https://user-images.githubusercontent.com/123066149/227263820-9694b25f-4b27-4678-b3d2-5d0dc67caf83.png)
 
 # ${{\color{purple}Points of Improvement}}\ $
