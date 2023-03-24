@@ -47,9 +47,9 @@
 
 
 # ${{\color{purple}Script}}\ $
-# ${{\color{green}LinEnum}}\ $
+# ${{\color{green}LinPeas}}\ $
 
-https://github.com/rebootuser/LinEnum
+https://github.com/carlospolop/PEASS-ng/releases/tag/20230319
 
 # ${{\color{green}Linux-Exploit-Suggester}}\ $
 
