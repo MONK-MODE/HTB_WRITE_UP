@@ -52,3 +52,6 @@ https://github.com/dix0nym/CVE-2015-6967
 ![image](https://user-images.githubusercontent.com/123066149/227263820-9694b25f-4b27-4678-b3d2-5d0dc67caf83.png)
 
 # ${{\color{purple}Points of Improvement}}\ $
+
+* Download the source code of the cms and search with it.
+* Try the name of the cms in password
