@@ -80,6 +80,10 @@
 
 ``nmap/nmap vuln/nikto/dirb/gobuster/curl/burp/tcpdump/perl_rev_shell``
 
+### Irked Nibbles:
+
+``nmap/nmap vuln/ffuf/dirb/``
+
 ### Lame :
 
 # ${{\color{purple}Active}}\ $
