@@ -6,7 +6,7 @@
 
 `python3 -c 'import pty; pty.spawn("/bin/bash")'`
 
-# ${{\color{purple}auto-completion}}\ $
+# ${{\color{purple}Auto-Completion}}\ $
 
 ``ctrl z`` 
 
