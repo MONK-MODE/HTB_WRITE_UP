@@ -39,6 +39,13 @@
 
 
 # ${{\color{purple}Script}}\ $
+# ${{\color{green}LinEnum}}\ $
+
+https://github.com/rebootuser/LinEnum
+
+# ${{\color{green}Linux-Exploit-Suggester}}\ $
+
+https://github.com/The-Z-Labs/linux-exploit-suggester
 
 # ${{\color{purple}}}\ $
 
