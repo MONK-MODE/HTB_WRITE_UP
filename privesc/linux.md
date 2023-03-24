@@ -6,6 +6,14 @@
 
 `python3 -c 'import pty; pty.spawn("/bin/bash")'`
 
+# ${{\color{purple}}auto-completion}\ $
+
+``ctrl z`` 
+
+``stty raw -echo``
+
+``fg enter``
+
 # ${{\color{purple}Manual testing}}\ $
 # ${{\color{green}sudo -l}}\ $
 
