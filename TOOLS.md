@@ -72,17 +72,21 @@
 
 ``nmap/gobuster/curl/exiftool/nc/vi/tcpdump/searchsploit/python/LinEnum/steghide/ssh/base64 -w0/ltrace``
 
-### Irked Valentine:
+### Valentine Linux:
 
 ``nmap/nmapvuln/sslyze/gobuster/cyberchef/heartbleed/echo -n/tmux/ssh2john/john``
 
-### Irked Shocker:
+### Shocker Linux:
 
 ``nmap/nmap vuln/nikto/dirb/gobuster/curl/burp/tcpdump/perl_rev_shell``
 
-### Irked Nibbles:
+### Nibbles Linux:
 
 ``nmap/nmap vuln/ffuf/dirb/``
+
+### Friendzone Linux:
+
+``nmap/nmap vuln/smbmap/smbclient/dig/formatchaine/aquatone/lfi/lfiwrapper/echo -n/``
 
 ### Lame :
 
