@@ -8,6 +8,16 @@
 
 # ${{\color{purple}Initial Foothold}}\ $
 
+### Replay creds in ssh
+
+### Replay smb creds on ftp
+
+### Try to find other things with user admin on SMB shares
+
+### Add domain names to /etc/hosts ()
+
+### Search on DNS side  :white_check_mark:
+
 ### SMB enum
 
 ``smbmap -H 10.10.10.123``
@@ -79,7 +89,19 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/227718348-a2577025-134f-4d35-864b-6f0d3d5a7b92.png)
 
-
 # ${{\color{purple}Privilege Escalation}}\ $
 
+![image](https://user-images.githubusercontent.com/123066149/227718434-6f461657-c273-42f4-804c-0ad805f2979c.png)
+
 # ${{\color{purple}Point of Improvement}}\ $
+
+* Check http and https for each domain
+* Check dnstransferdezone for each domain
+* Check multiple lfi to find the lfi
+* No need file extension for the lfi
+
+Prvesc: 
+
+* You have to modify /usr/lib/python2.7/os.py
+* Remove the os command in the revshell
+* I put the script at the end of /usr/lib/python2.7/os.py to make it work 
