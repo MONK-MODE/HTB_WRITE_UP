@@ -22,6 +22,8 @@
 
 ``smbmap -H 10.10.10.123``
 
+### Knowing the /etc/files directory will help for the rest of the box :
+
 ![image](https://user-images.githubusercontent.com/123066149/227715847-cc1680ce-78f5-4084-9049-abbb1956db7d.png)
 
 ``smbclient //10.10.10.123/general``
@@ -95,7 +97,8 @@
 
 # ${{\color{purple}Point of Improvement}}\ $
 
-* Check http and https for each domain
+* Check http and https for each domain 
+* Use ``aquatone`` for this part
 * Check dnstransferdezone for each domain
 * Check multiple lfi to find the lfi
 * No need file extension for the lfi
