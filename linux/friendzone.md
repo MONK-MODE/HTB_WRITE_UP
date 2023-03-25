@@ -71,6 +71,14 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/227717897-56948f7e-6460-4282-8487-ece63bd07159.png)
 
+![image](https://user-images.githubusercontent.com/123066149/227718138-48a0fe3d-0cf6-44ca-b0f0-a0ff3d6c11f1.png)
+
+![image](https://user-images.githubusercontent.com/123066149/227718179-67b46878-d50d-46b5-b124-9f7fc142fae2.png)
+
+![image](https://user-images.githubusercontent.com/123066149/227718336-1144299c-c055-42c6-8568-cf98bd882486.png)
+
+![image](https://user-images.githubusercontent.com/123066149/227718348-a2577025-134f-4d35-864b-6f0d3d5a7b92.png)
+
 
 # ${{\color{purple}Privilege Escalation}}\ $
 
