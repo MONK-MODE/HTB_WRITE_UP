@@ -115,6 +115,15 @@ https://seclists.org/fulldisclosure/2019/Apr/24
 ### underlying service, leading to execution of anything after a space.
 ### We can exploit this by executing /bin/bash as root
 
+# ${{\color{green}SUID Files : Nmap}}\ $
+
+![Capture](https://user-images.githubusercontent.com/123066149/227937810-a6bcdf41-9acc-4de4-8f0c-bd322b5b097b.PNG)
+
+``nmap --interactive``
+
+``!sh``
+
+![2](https://user-images.githubusercontent.com/123066149/227937822-b62c4470-c943-486e-aa74-2de73ae958b9.PNG)
 
 
 # ${{\color{purple}Script}}\ $
