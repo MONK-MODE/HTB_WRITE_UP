@@ -88,6 +88,10 @@
 
 ``nmap/nmap vuln/smbmap/smbclient/dig/formatchaine/aquatone/lfi/lfiwrapper/echo -n/``
 
+### Networked Linux:
+
+``nmap/gobuster/tar/file_upload_type_mime_magic_byte_double_extension/echo -n/crontab+system_exec/touch --/``
+
 ### Lame :
 
 # ${{\color{purple}Active}}\ $
