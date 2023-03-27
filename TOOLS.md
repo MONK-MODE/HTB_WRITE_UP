@@ -94,6 +94,8 @@
 
 ### Lame :
 
+``nmap/smbmap/nmap_script/samba``
+
 # ${{\color{purple}Active}}\ $
 
 ### Stocker
