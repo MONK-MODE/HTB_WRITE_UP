@@ -241,7 +241,7 @@ while True:
 
 ![image](https://user-images.githubusercontent.com/123066149/228951637-17575ac8-fadd-452c-85f2-dba0fdf82327.png)
 
-# ${{\color{green}Ad GDB_PEDA to target machine }}\ $
+# ${{\color{green}UPLOAD : GDB PEDA}}\ $
 
 ``tar -xvf peda.tar /dir/``
 
