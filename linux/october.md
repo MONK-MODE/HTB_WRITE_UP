@@ -42,6 +42,8 @@
 
 # ${{\color{purple}Privilege Escalation}}\ $
 
+https://ravi5hanka.medium.com/privilege-escalation-in-linux-via-a-local-buffer-overflow-dcee4f9b4a49
+
 ``find / -perm -4000 2>/dev/null``
 
 ![image](https://user-images.githubusercontent.com/123066149/228848043-e31e5e3a-e793-4f11-8e72-3cd151bb67ff.png)
