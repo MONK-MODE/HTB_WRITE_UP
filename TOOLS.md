@@ -96,6 +96,10 @@
 
 ``nmap/smbmap/nmap_script/samba``
 
+### October :
+
+``nmap/gobuster/searchsploit/buffer/buffer-overflow/md5sum/uname -a/cat /etc/lsb-release/gdb/gdb-peda/aslr``
+
 # ${{\color{purple}Active}}\ $
 
 ### Stocker
