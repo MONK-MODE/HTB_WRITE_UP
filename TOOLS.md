@@ -100,6 +100,10 @@
 
 ``nmap/gobuster/searchsploit/buffer/buffer-overflow/md5sum/uname -a/cat /etc/lsb-release/gdb/gdb-peda/aslr``
 
+### Jarvis :
+
+``nmap/gobuster/ffuf/sql_injection/injection_sql/injection_sql_union/john/phpmyadmin_4.8.0_rce/exec/systemctl``
+
 # ${{\color{purple}Active}}\ $
 
 ### Stocker
