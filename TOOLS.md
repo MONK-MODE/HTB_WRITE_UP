@@ -108,6 +108,10 @@
 
 ``nmap/gobuster/xxe/picle/pickle_exploit.py/ssh_-i/git_log/git_diff/``
 
+### Lightweight :
+
+``nmap/ldapsearch/openldap/echo -n/hashcat/john/jxplorer/linenum/wireshark/7z2john/7z/su -/getcap/openssl/``
+
 # ${{\color{purple}Active}}\ $
 
 ### Stocker
