@@ -104,6 +104,10 @@
 
 ``nmap/gobuster/ffuf/sql_injection/injection_sql/injection_sql_union/john/phpmyadmin_4.8.0_rce/exec/systemctl``
 
+### Devoops :
+
+``nmap/gobuster/xxe/picle/pickle_exploit.py/ssh_-i/git_log/git_diff/``
+
 # ${{\color{purple}Active}}\ $
 
 ### Stocker
