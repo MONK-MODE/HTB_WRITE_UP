@@ -107,6 +107,8 @@ etc/passwd
 
 ``nc -nlvp 1234``
 
+### Care the content type is TEXT
+
 ![image](https://user-images.githubusercontent.com/123066149/229841762-d227f214-ef54-49dd-a43f-9c776d252ac2.png)
 
 ![image](https://user-images.githubusercontent.com/123066149/229841897-a35ebf33-6666-4048-81ab-18988830379f.png)
