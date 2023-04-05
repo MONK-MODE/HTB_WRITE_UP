@@ -146,6 +146,32 @@ https://seclists.org/fulldisclosure/2019/Apr/24
 
 ![2023-04-03 20_38_02-kali-linux-2022 4-vmware-amd64 - VMware Workstation](https://user-images.githubusercontent.com/123066149/229597833-52860ee3-8cde-4485-9c69-ecd3f93ee1ec.png)
 
+# ${{\color{green}GIT : git}}\ $
+
+`` find . -name git``
+
+`` find . -name .git``
+
+![image](https://user-images.githubusercontent.com/123066149/229842575-d9c474e0-5868-4baf-82ff-798b742ea048.png)
+
+``git log``
+
+![image](https://user-images.githubusercontent.com/123066149/229842861-d11ea991-dad1-48ad-ab79-4b70c3df9e6a.png)
+
+### Don't go in the .git directory :
+
+![image](https://user-images.githubusercontent.com/123066149/229843514-e98717a1-ae59-40e2-8c25-497748a1010b.png)
+
+``git diff d387abf63e05c9628a59195cec9311751bdb283f``
+
+![image](https://user-images.githubusercontent.com/123066149/229843761-7deec5b6-e1fd-4b8b-acd4-8f5403f93316.png)
+
+``chmod 600``
+
+``ssh -i privatekey root@ip``
+
+![image](https://user-images.githubusercontent.com/123066149/229844331-aef01eab-da3e-49df-8368-c1dc10b42269.png)
+
 
 # ${{\color{green}Buffer : Bypass ASLR}}\ $
 
