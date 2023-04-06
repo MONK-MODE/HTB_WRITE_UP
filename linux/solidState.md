@@ -103,6 +103,7 @@ https://www.exploit-db.com/exploits/50347
 
 ### And we are root :
  
-![image](https://user-images.githubusercontent.com/123066149/230384693-5758a51b-e48b-4bad-9dd3-8033513480d8.png)
+![image](https://user-images.githubusercontent.com/123066149/230385136-1a3f0f26-5b4a-4cb4-ba99-e07374157c21.png)
+
 
 # ${{\color{purple}Points of Improvement}}\ $
