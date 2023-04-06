@@ -8,7 +8,17 @@
 
 # ${{\color{purple}Upgrade shell : Part 2}}\ $
 
+``rlwrap nc -nlvp 1234``
 
+``export TERM=xterm``
+
+``stty -a``
+
+``stty rows 54``
+
+``stty cols 111``
+
+``stty raw -echo;fg``
 
 # ${{\color{purple}Manual testing}}\ $
 # ${{\color{green}sudo -l}}\ $
