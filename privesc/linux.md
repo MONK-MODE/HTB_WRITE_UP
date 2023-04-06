@@ -6,6 +6,10 @@
 
 `python3 -c 'import pty; pty.spawn("/bin/bash")'`
 
+# ${{\color{purple}Upgrade shell : Part 2}}\ $
+
+
+
 # ${{\color{purple}Manual testing}}\ $
 # ${{\color{green}sudo -l}}\ $
 
@@ -36,6 +40,39 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/226274864-b5db7a5e-f19f-4854-929f-aa2f491ae328.png)
 ![image](https://user-images.githubusercontent.com/123066149/226275042-06bc4a86-474e-486f-a4e4-00ac3e2e4950.png)
+
+# ${{\color{green}crontab : }}\ $
+
+### After my enumeration i found this script :
+
+![image](https://user-images.githubusercontent.com/123066149/230378975-d4df5a28-03e3-4040-95c5-0ff5b3d5b2d4.png)
+
+### Pspy confirm me that this script run with a crontab :
+
+![image](https://user-images.githubusercontent.com/123066149/230383159-98abc3b3-cb09-4f3a-8dcd-65f64fb1c8f2.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230382964-32169402-f2b1-4cf8-8b25-64b0e55678cf.png)
+
+### We can edit the script and execute command :
+### But regular rev shell are not working we have /bin/dash on the machine we will ad chmod 4755 to this binary :
+
+``os.system('chmod 4755 /bin/dash')``
+
+![image](https://user-images.githubusercontent.com/123066149/230384009-2578821d-9f32-483f-95fd-debe8e5cb87e.png)
+
+``date``
+
+``ls -lah /bin/dash``
+
+![image](https://user-images.githubusercontent.com/123066149/230384123-a6526df4-21bd-48cc-b2df-bb13f070ff59.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230384619-80051ff2-7aab-4595-9208-5a80f9326f52.png)
+
+``/bin/dash``
+
+### And we are root :
+ 
+![image](https://user-images.githubusercontent.com/123066149/230385136-1a3f0f26-5b4a-4cb4-ba99-e07374157c21.png)
 
 # ${{\color{green}crontab + lib os}}\ $
 
@@ -359,5 +396,7 @@ https://github.com/rebootuser/LinEnum
 
 https://github.com/The-Z-Labs/linux-exploit-suggester
 
-# ${{\color{purple}}}\ $
+# ${{\color{green}Pspy}}\ $
+
+https://github.com/DominicBreuker/pspy/releases/tag/v1.2.1
 
