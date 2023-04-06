@@ -112,6 +112,10 @@
 
 ``nmap/ldapsearch/openldap/echo -n/hashcat/john/jxplorer/linenum/wireshark/7z2john/7z/su -/getcap/openssl/``
 
+### Solidstate :
+
+``nmap/telnet/smtp/pop3/port_4555/james/rbash/pspy/pspy32/crontab/suid``
+
 # ${{\color{purple}Active}}\ $
 
 ### Stocker
