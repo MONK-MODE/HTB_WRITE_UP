@@ -10,6 +10,8 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/230632255-084b1257-7cbc-4367-b61b-68f62b8d71b3.png)
 
+``nmap -sU --min-rate 5000 10.10.10.13``
+
 ``gobuster dir -u http://10.10.10.13/ -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-big.txt -x php,pl,py,sh,html,txt,js -t 70``
 
 # ${{\color{purple}Initial Foothold}}\ $
