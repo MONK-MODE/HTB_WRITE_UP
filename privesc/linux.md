@@ -10,7 +10,7 @@
 
 ``rlwrap nc -nlvp 1234``
 
-``export TERM=xterm``
+``export TERM=tmux-256color``
 
 ``stty -a``
 
