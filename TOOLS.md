@@ -92,29 +92,33 @@
 
 ``nmap/gobuster/tar/file_upload_type_mime_magic_byte_double_extension/echo -n/crontab+system_exec/touch --/``
 
-### Lame :
+### Lame Linux :
 
 ``nmap/smbmap/nmap_script/samba``
 
-### October :
+### October Linux :
 
 ``nmap/gobuster/searchsploit/buffer/buffer-overflow/md5sum/uname -a/cat /etc/lsb-release/gdb/gdb-peda/aslr``
 
-### Jarvis :
+### Jarvis Linux :
 
 ``nmap/gobuster/ffuf/sql_injection/injection_sql/injection_sql_union/john/phpmyadmin_4.8.0_rce/exec/systemctl``
 
-### Devoops :
+### Devoops Linux :
 
 ``nmap/gobuster/xxe/picle/pickle_exploit.py/ssh_-i/git_log/git_diff/``
 
-### Lightweight :
+### Lightweight Linux :
 
 ``nmap/ldapsearch/openldap/echo -n/hashcat/john/jxplorer/linenum/wireshark/7z2john/7z/su -/getcap/openssl/``
 
-### Solidstate :
+### Solidstate Linux :
 
 ``nmap/telnet/smtp/pop3/port_4555/james/rbash/pspy/pspy32/crontab/suid``
+
+### Cronos Linux :
+
+``nmap/nmapudp/gobuster/dig/dns/sqli/sqlinjection/crontab/chown/laravel``
 
 # ${{\color{purple}Active}}\ $
 
