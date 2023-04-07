@@ -32,3 +32,5 @@
 30) Devoops
 31) LightWeight
 32) SolidState
+33) Cronos
+
