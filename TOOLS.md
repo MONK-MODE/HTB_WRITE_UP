@@ -120,6 +120,10 @@
 
 ``nmap/nmapudp/gobuster/dig/dns/sqli/sqlinjection/crontab/chown/laravel``
 
+### Hawk Linux :
+
+``nmap/ftp/dir -a/openssl/bruteforce-salted-openssl/enc/drupal/drupal_7.58/ssh -L/ssh-keygen/ssh-i/h2 database/``
+
 # ${{\color{purple}Active}}\ $
 
 ### Stocker
