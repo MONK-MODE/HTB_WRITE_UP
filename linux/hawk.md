@@ -156,3 +156,7 @@ https://mthbernardes.github.io/rce/2018/03/14/abusing-h2-database-alias.html
 
 
 # ${{\color{purple}Points of Improvement}}\ $
+
+* Don't forget to do ``dir -a`` in the ftp to see the hidden files
+* Do not forget the replay of database creds for ssh/ftp/...
+* Adding a ssh key is a good method if nothing else works 
