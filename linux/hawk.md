@@ -62,7 +62,6 @@ https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/drupal
 
 ![image](https://user-images.githubusercontent.com/123066149/230891707-bfb6790c-5163-4e54-88ca-40e4f42166fb.png)
 
-
 ![image](https://user-images.githubusercontent.com/123066149/230891898-c92282fb-f6e9-4fbb-8df5-535f6658c01e.png)
 
 ![image](https://user-images.githubusercontent.com/123066149/230892120-a8b817e8-4f08-4b91-92d2-cf0b123de873.png)
