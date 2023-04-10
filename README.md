@@ -33,4 +33,5 @@
 31) LightWeight
 32) SolidState
 33) Cronos
+34) Hawk
 
