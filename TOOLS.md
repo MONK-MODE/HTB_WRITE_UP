@@ -126,6 +126,10 @@
 
 # ${{\color{purple}Active}}\ $
 
+### SwagShop Linux :
+
+``nmap/magescan/magento/python/python_debuging/pdb``
+
 ### Stocker
 
 ``nmap/ffuf/burp/intruder/wget/exiftool/searchsploit/xss/rce/ssh/sudo``
