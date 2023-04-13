@@ -6,6 +6,10 @@
 
 `python3 -c 'import pty; pty.spawn("/bin/bash")'`
 
+# ${{\color{purple}Enum : Faster}}\ $
+
+``alias ll='ls -lah'``
+
 # ${{\color{purple}Upgrade shell : Part 2}}\ $
 
 ``rlwrap nc -nlvp 1234``
