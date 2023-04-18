@@ -124,11 +124,15 @@
 
 ``nmap/ftp/dir -a/openssl/bruteforce-salted-openssl/enc/drupal/drupal_7.58/ssh -L/ssh-keygen/ssh-i/h2 database/``
 
-# ${{\color{purple}Active}}\ $
-
 ### SwagShop Linux :
 
 ``nmap/magescan/magento/python/python_debuging/pdb``
+
+### Susie Linux :
+
+``nmap/smbmap/searchsploit/CVE-2017-7494/sambacry``
+
+# ${{\color{purple}Active}}\ $
 
 ### Stocker
 
