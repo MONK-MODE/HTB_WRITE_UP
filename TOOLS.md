@@ -130,7 +130,7 @@
 
 ### Susie Linux :
 
-``nmap/smbmap/searchsploit/CVE-2017-7494/sambacry``
+``nmap/smbmap/searchsploit/CVE-2017-7494/sambacry/backdor.c/adduser.c/adduser.so/ping.so``
 
 # ${{\color{purple}Active}}\ $
 
