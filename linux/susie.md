@@ -65,6 +65,10 @@ https://redteamzone.com/EternalRed/
 
 ![image](https://user-images.githubusercontent.com/123066149/232703497-ab44b5f3-2e2c-4a5f-aef5-af4225a13910.png)
 
+# ${{\color{purple}Manual exploitation other way}}\ $
+
+nmap --script smb-enum-shares -p 445 10.11.1.146
+
 # ${{\color{purple}Points of Improvement}}\ $
 
 * Test this exploit on another vulnerable target
