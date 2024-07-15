@@ -28,7 +28,7 @@
 
 # ${{\color{purple}Networking information}}\ $
 
-`ipconfig -a`
+`ifconfig -a`
 
 `route`
 
