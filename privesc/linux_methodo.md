@@ -1,6 +1,6 @@
 # Linux Priv escalation Methodo
 
-# ${{\color{purple}OS : Kernel : Hostname}}\ $
+# ${{\color{purple}OS : Kernel : Hostname}}\$
 
 `cat /etc/issue`
 
