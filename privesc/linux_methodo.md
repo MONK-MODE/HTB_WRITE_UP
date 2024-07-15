@@ -1,6 +1,6 @@
 # Linux Priv escalation Methodo
 
-# ${{\color{purple}OS : Kernel : Hostname}}\$
+# ${{\color{purple}OS : Kernel : Hostname}}\ $
 
 `cat /etc/issue`
 
@@ -29,3 +29,44 @@
 # ${{\color{purple}Networking information}}\ $
 
 `ipconfig -a`
+
+`route`
+
+`netstat -antup`
+
+`arp -e`
+
+# ${{\color{purple}Path}}\ $
+
+`echo $PATH`
+
+# ${{\color{purple}Check OPT}}\ $
+
+`cd /opt`
+
+`ls -lah`
+
+# ${{\color{purple}Applications and Services}}\ $
+
+`ps aux`
+
+`ps aux | grep root`
+
+### The followinf commands retrieve installed applications :
+
+### Debian and derivatives use :`dpkg -l`
+
+### Fedora based distros use :`rpm -qa`
+
+
+
+
+
+
+
+
+
+
+
+
+
