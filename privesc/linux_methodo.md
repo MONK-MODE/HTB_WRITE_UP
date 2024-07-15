@@ -52,20 +52,49 @@
 
 `ps aux | grep root`
 
+`ls -ls /etc/grep.conf`
+
+`ls -ls /var/wwww/html/`
+
 ### The followinf commands retrieve installed applications :
 
-### Debian and derivatives use :`dpkg -l`
+### Debian and derivatives use :
+`dpkg -l`
+### Fedora based distros use :
+`rpm -qa`
 
-### Fedora based distros use :`rpm -qa`
+# ${{\color{purple}SUID Programs}}\ $
 
+`find /* -user root -perm -4000 -print 2>/dev/null`
 
+# ${{\color{purple}Files and Files Systems}}\ $
 
+### Use the following command to check for unmouted file systems :
+`cat /etc/fstab`
+### World writable directories :
+`find / \( -wholename '/home/homedir*' -prune \) -o \( -type d -perm -0002 \) -exec ls -ld '{}' ';' 2>/dev/null | grep -v root`
+### World writable directories for root :
+`find / \( -wholename '/home/homedir*' -prune \) -o \( -type d -perm -0002 \) -exec ls -ld '{}' ';' 2>/dev/null | grep root`
+### World writable files :
+`find / \( -wholename '/home/homedir/*' -prune -o -wholename '/proc/*' -prune \) -o \( -type f -perm -0002 \) -exec ls -l '{}' ';' 2>/dev/null`
+### Find world writable files in /etc :
+`find /etc -perm -2 -type f 2>/dev/null`
+### And the following command searches for world writable directories :
+`find / -writable -type d 2>/dev/null`
+### Search for binaries with special capabilities :
+`getcap -r / 2>/dev/null`
 
+# ${{\color{purple}Scripts }}\ $
 
-
-
-
-
+### LinPEAS :
+`[rpm -qa](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)![image](https://github.com/user-attachments/assets/8b3a48c9-7466-4be3-9cf8-5c8127028c30)
+`
+### Linux privilege escalation checker :
+`rpm -qa`
+### Unix-privesc-check v1.4 :
+`rpm -qa`
+### PSPY :
+`rpm -qa`
 
 
 
