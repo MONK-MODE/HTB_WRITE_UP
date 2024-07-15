@@ -50,7 +50,7 @@ https://github.com/k4u5h41/MS17-010_CVE-2017-0143
 
 ``pip2.7 install --upgrade setuptools``
 
-``python2.7 -m pip install impacket``
+``pip install impacket==0.9.22``
 
 ![image](https://user-images.githubusercontent.com/123066149/219160110-72dbd5b9-e8ee-4af8-8199-40a5f749e80d.png)
 
