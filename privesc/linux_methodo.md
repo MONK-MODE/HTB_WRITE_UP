@@ -87,14 +87,19 @@
 # ${{\color{purple}Scripts }}\ $
 
 ### LinPEAS :
-`[rpm -qa](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)![image](https://github.com/user-attachments/assets/8b3a48c9-7466-4be3-9cf8-5c8127028c30)
-`
+https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+
+### LinENUM :
+https://github.com/rebootuser/LinEnum
+
 ### Linux privilege escalation checker :
-`rpm -qa`
+`wget http://www.securitysift.com/download/linuxprivchecker.py`
+
 ### Unix-privesc-check v1.4 :
-`rpm -qa`
+https://pentestmonkey.net/tools/audit/unix-privesc-check
+
 ### PSPY :
-`rpm -qa`
+https://github.com/DominicBreuker/pspy
 
 
 
