@@ -40,6 +40,8 @@
 
 `echo $PATH`
 
+`env`
+
 # ${{\color{purple}Check OPT}}\ $
 
 `cd /opt`
